@@ -510,6 +510,15 @@
   color: var(--abs-rose-200);
 }
 
+/* Badge di atas latar gelap: warna dasar (merah gelap) tidak terbaca,
+   jadi dibalik jadi teks terang dengan garis tipis. */
+.slidev-layout.abs-dark .abs-pill,
+.slidev-layout.abs-cover .abs-pill {
+  background: rgba(255, 240, 243, 0.10);
+  color: var(--abs-rose-100);
+  border-color: rgba(255, 179, 193, 0.30);
+}
+
 .slidev-layout.abs-dark .abs-card {
   border-color: rgba(255, 179, 193, 0.22);
   background: rgba(255, 240, 243, 0.06);

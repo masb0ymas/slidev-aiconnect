@@ -91,36 +91,39 @@ layout: default
 
 # Peta sesi hari ini
 
-<div class="grid grid-cols-2 gap-x-10 gap-y-1 mt-6">
+<div class="grid grid-cols-2 gap-x-10 gap-y-1 mt-5">
 
 <div>
 
-### <span class="abs-accent">Bagian 1</span> — Mindset
+### <span class="abs-accent">Bagian 1</span> — Fundamental
+Enam cara berpikir: definisi masalah, data, sistem, niat, trade-off, dekomposisi.
+
+### <span class="abs-accent">Bagian 2</span> — Mindset
 Cara berpikir yang berubah, dan peran baru yang kamu pegang.
 
-### <span class="abs-accent">Bagian 2</span> — Anatomi AI Builder
+### <span class="abs-accent">Bagian 3</span> — Anatomi AI Builder
 Cara AI bekerja, jenis-jenis tool, dan kenapa AI sering ngawur.
-
-### <span class="abs-accent">Bagian 3</span> — Framework Sprint
-Lima langkah baku: Ide → Spesifikasi → Instruksi → Bangun → Uji.
 
 </div>
 
 <div>
 
-### <span class="abs-accent">Bagian 4</span> — Live Demo
-Saya bangun satu asisten AI dari nol di depan kalian.
+### <span class="abs-accent">Bagian 4</span> — Framework Sprint
+Lima langkah baku: Ide → Spesifikasi → Instruksi → Bangun → Uji.
 
-### <span class="abs-accent">Bagian 5</span> — Persiapan Praktek
+### <span class="abs-accent">Bagian 5</span> — Live Demo
+Saya bangun satu aplikasi dari nol di depan kalian.
+
+### <span class="abs-accent">Bagian 6</span> — Persiapan Praktek
 Checklist, cheat sheet prompt, dan daftar ide.
 
-<div class="abs-callout mt-6">
+</div>
+
+</div>
+
+<div class="abs-callout mt-4">
 
 **Aturan main:** tidak ada pertanyaan yang terlalu dasar. Semua ide boleh. Kita di sini untuk membuat, bukan menghafal.
-
-</div>
-
-</div>
 
 </div>
 
@@ -134,14 +137,454 @@ layout: section
 class: abs-dark
 ---
 
-<div class="abs-eyebrow">Bagian 1 dari 5</div>
+<div class="abs-eyebrow">Bagian 1 dari 6</div>
+
+# Fundamental
+
+Enam cara berpikir yang tetap berguna, apa pun tool yang kamu pakai.
+
+<div class="flex flex-wrap justify-center gap-2 mt-8">
+<span class="abs-pill">Definisi Masalah</span>
+<span class="abs-pill">Pemodelan Data</span>
+<span class="abs-pill">Berpikir Sistem</span>
+<span class="abs-pill">Penerjemahan Niat</span>
+<span class="abs-pill">Penalaran Trade-off</span>
+<span class="abs-pill">Dekomposisi Masalah</span>
+</div>
+
+<!--
+Pembatas bagian. 13 menit untuk enam topik di bawah.
+
+Kenapa bagian ini ditaruh paling depan: ini yang membedakan orang yang
+sekadar "bisa pakai AI" dan orang yang "bisa menyelesaikan masalah dengan
+AI". Nama tool berganti tiap tahun; enam cara berpikir ini tidak.
+
+Semua contoh di bagian ini memakai kasus warung/POS yang sama dengan demo
+nanti — supaya peserta melihat benang merahnya sejak awal.
+
+Kalau waktu mepet, percepat bagian ini: cukup bahas Definisi Masalah dan
+Dekomposisi, lalu sebut empat lainnya sekilas. Jangan lewatkan bagian ini
+sepenuhnya — ini fondasi untuk sesi praktek.
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Definisi Masalah
+
+<div class="abs-step-head">
+<span class="abs-pill">Fundamental · 1 dari 6</span>
+<span class="abs-eyebrow">Mendefinisikan masalah dengan akurat</span>
+</div>
+
+<div class="grid grid-cols-2 gap-8">
+
+<div>
+
+<h3>Gejala bukan masalah</h3>
+
+<ul class="abs-list mt-2">
+<li><strong>Gejala</strong> — yang terlihat: "warung saya sepi"</li>
+<li><strong>Masalah</strong> — penyebabnya: "pemilik tidak tahu produk mana yang laku"</li>
+</ul>
+
+<div class="abs-callout mt-4">
+
+<strong>Ujinya:</strong> masalah yang baik bisa ditulis dalam satu kalimat, penggunanya jelas, dan hasilnya bisa diukur.
+
+</div>
+
+</div>
+
+<div>
+
+<h3>Rantai "kenapa"</h3>
+
+<div class="abs-card mt-2">
+
+<p><strong>Warung sepi</strong> <span class="abs-muted">— kenapa?</span></p>
+<p class="mt-2"><strong>Barang yang dicari sering kosong</strong> <span class="abs-muted">— kenapa?</span></p>
+<p class="mt-2"><strong>Pemilik tidak tahu barang mana yang cepat habis</strong> <span class="abs-muted">— kenapa?</span></p>
+<p class="mt-2"><strong>Tidak ada catatan penjualan</strong> — <em>ini masalahnya</em></p>
+
+</div>
+
+<p class="abs-small abs-muted mt-3">Berhenti bertanya ketika jawabannya sudah bisa dikerjakan.</p>
+
+</div>
+
+</div>
+
+<!--
+Catatan: 2 menit. Tunjukkan bahwa "warung sepi" tidak bisa dikerjakan —
+terlalu kabur. Setelah rantai "kenapa" ditelusuri, masalahnya jadi konkret
+dan solusinya jelas: catat penjualan, lalu tampilkan rekap.
+
+Poin yang harus diucapkan: "Kalau kamu berhenti di gejala, AI akan membuat
+solusi untuk gejala itu — dan kamu akan membangun hal yang salah dengan
+sangat cepat."
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Pemodelan Data
+
+<div class="abs-step-head">
+<span class="abs-pill">Fundamental · 2 dari 6</span>
+<span class="abs-eyebrow">Merancang data sebelum menulis kode</span>
+</div>
+
+<div class="grid grid-cols-2 gap-8">
+
+<div>
+
+<h3>Data dulu, tampilan kemudian</h3>
+
+<ul class="abs-list mt-2">
+<li><strong>Apa yang dicatat?</strong> Tentukan "benda"-nya lebih dulu</li>
+<li><strong>Apa isinya?</strong> Setiap benda punya keterangan</li>
+<li><strong>Bagaimana hubungannya?</strong> Satu transaksi berisi banyak produk</li>
+</ul>
+
+<div class="abs-callout mt-4">
+
+<strong>Kenapa penting:</strong> tampilan bisa diganti kapan saja. Struktur data yang salah jauh lebih mahal diperbaiki.
+
+</div>
+
+</div>
+
+<div>
+
+<h3>Contoh untuk kasir warung</h3>
+
+<table class="mt-2">
+<tbody>
+<tr><td><strong>Produk</strong></td><td>nama, harga</td></tr>
+<tr><td><strong>Transaksi</strong></td><td>waktu, total, cara bayar</td></tr>
+<tr><td><strong>Item transaksi</strong></td><td>produk apa, berapa jumlah</td></tr>
+</tbody>
+</table>
+
+<div class="abs-callout-warn abs-callout mt-4">
+
+Kalau kamu tidak menentukan struktur data, <strong>AI akan mengarang</strong> — dan hasilnya berubah setiap kali diminta.
+
+</div>
+
+</div>
+
+</div>
+
+<!--
+Catatan: 2 menit. Tekankan bahwa ini kebiasaan yang paling jarang dimiliki
+pemula: mereka langsung memikirkan tampilan.
+
+Analogi yang berguna: data itu seperti daftar belanja, tampilan itu seperti
+desain kantongnya. Kantong bisa diganti; daftar belanjanya yang menentukan
+apa yang bisa dibeli.
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Berpikir Sistem
+
+<div class="abs-step-head">
+<span class="abs-pill">Fundamental · 3 dari 6</span>
+<span class="abs-eyebrow">Memahami hubungan antar komponen</span>
+</div>
+
+<div class="grid grid-cols-2 gap-8">
+
+<div>
+
+<h3>Rangkaian, bukan tumpukan fitur</h3>
+
+<ul class="abs-list mt-2">
+<li>Satu bagian menerima masukan</li>
+<li>Mengolahnya, lalu menyerahkan ke bagian lain</li>
+<li>Hasilnya disimpan, lalu dibaca ulang</li>
+</ul>
+
+<div class="abs-callout mt-4">
+
+<strong>Pertanyaan kunci:</strong> kalau bagian ini berubah, bagian mana lagi yang ikut berubah?
+
+</div>
+
+</div>
+
+<div>
+
+<h3>Alur kasir warung</h3>
+
+<div class="abs-flow mt-2" style="flex-direction:column;gap:0.4rem">
+<div class="abs-flow-item" style="text-align:left;padding:0.5rem">Pilih produk → masuk keranjang</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.5rem">Hitung total → tampilkan struk</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.5rem">Simpan transaksi</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.5rem">Baca ulang untuk rekap harian</div>
+</div>
+
+<p class="abs-small abs-muted mt-3">Ubah aturan harga di langkah 2, dan rekap di langkah 4 ikut berubah. Itulah berpikir sistem.</p>
+
+</div>
+
+</div>
+
+<!--
+Catatan: 2 menit. Poin praktisnya: jangan menilai fitur satu per satu.
+Tanyakan dampaknya ke bagian lain.
+
+Contoh yang sering terjadi: peserta meminta AI menambahkan fitur diskon.
+Tiga hari kemudian rekap harian jadi salah, karena diskon tidak ikut
+terhitung. Itu gejala berpikir sistem yang lemah.
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Penerjemahan Niat Pengguna
+
+<div class="abs-step-head">
+<span class="abs-pill">Fundamental · 4 dari 6</span>
+<span class="abs-eyebrow">Dari visi ke spesifikasi teknis</span>
+</div>
+
+<div class="grid grid-cols-2 gap-8">
+
+<div>
+
+<h3>Kata sifat tidak bisa dikerjakan</h3>
+
+<ul class="abs-list mt-2">
+<li>"Aplikasinya harus <strong>mudah</strong>" — mudah bagi siapa?</li>
+<li>"Harus <strong>cepat</strong>" — cepat itu berapa detik?</li>
+<li>"Yang <strong>bagus</strong>" — bagus menurut ukuran apa?</li>
+</ul>
+
+<div class="abs-callout mt-4">
+
+<strong>Ubah kata sifat menjadi angka.</strong> Itu satu-satunya cara AI tahu apa yang kamu maksud.
+
+</div>
+
+</div>
+
+<div>
+
+<h3>Contoh penerjemahan</h3>
+
+<table class="mt-2">
+<tbody>
+<tr><td>"mudah dipakai"</td><td>maksimal 3 klik dari buka sampai struk tercetak</td></tr>
+<tr><td>"cepat"</td><td>total muncul di bawah 1 detik</td></tr>
+<tr><td>"aman"</td><td>hanya kasir yang bisa menghapus transaksi</td></tr>
+</tbody>
+</table>
+
+<p class="abs-small abs-muted mt-3">Ini yang nanti kamu tulis di kolom <strong>Batasan</strong> dan <strong>Kriteria sukses</strong>.</p>
+
+</div>
+
+</div>
+
+<!--
+Catatan: 2 menit. Ini jembatan langsung ke Langkah 2 (Spesifikasi) nanti.
+Sebutkan bahwa slide ini adalah inti dari pekerjaan menerjemahkan.
+
+Latihan cepat kalau waktu memungkinkan: minta peserta menerjemahkan satu
+kata sifat pilihan mereka sendiri. Contoh: "laporannya harus rapi" →
+"tercetak dalam 3 kolom, ada total di baris bawah".
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Penalaran Trade-off
+
+<div class="abs-step-head">
+<span class="abs-pill">Fundamental · 5 dari 6</span>
+<span class="abs-eyebrow">Memilih yang tepat, bukan yang mudah</span>
+</div>
+
+<div class="grid grid-cols-2 gap-8">
+
+<div>
+
+<h3>Tidak ada solusi tanpa biaya</h3>
+
+<ul class="abs-list mt-2">
+<li>Lebih cepat dibangun → biasanya lebih kaku</li>
+<li>Lebih lengkap fiturnya → lebih lama dibuat</li>
+<li>Lebih murah → ada yang dikorbankan</li>
+</ul>
+
+<div class="abs-callout mt-4">
+
+<strong>Biasakan bertanya:</strong> "apa yang saya korbankan dengan pilihan ini?"
+
+</div>
+
+</div>
+
+<div>
+
+<h3>Contoh: di mana data disimpan?</h3>
+
+<table class="mt-2">
+<tbody>
+<tr><td><strong>Di browser</strong></td><td>Cepat, tanpa biaya. <span class="abs-muted">Hilang kalau cache dibersihkan.</span></td></tr>
+<tr><td><strong>Di server</strong></td><td>Aman, bisa dibuka dari HP lain. <span class="abs-muted">Perlu biaya dan pengaturan.</span></td></tr>
+</tbody>
+</table>
+
+<p class="abs-small abs-muted mt-3">Untuk warung dengan satu kasir, pilihan pertama sudah tepat. Yang penting kamu <strong>tahu</strong> sedang menukar apa.</p>
+
+</div>
+
+</div>
+
+<!--
+Catatan: 2 menit. Pesan intinya: pilihan yang tepat bergantung pada konteks,
+bukan pada mana yang paling canggih.
+
+Hindari memberi kesan bahwa ada jawaban benar yang tunggal. Yang dinilai
+di sini adalah apakah peserta bisa menyebutkan konsekuensinya, bukan apakah
+pilihannya sama dengan pilihan orang lain.
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Dekomposisi Masalah
+
+<div class="abs-step-head">
+<span class="abs-pill">Fundamental · 6 dari 6</span>
+<span class="abs-eyebrow">Memecah masalah besar menjadi langkah kecil</span>
+</div>
+
+<div class="grid grid-cols-2 gap-8">
+
+<div>
+
+<h3>Terlalu besar untuk dimulai</h3>
+
+<p class="abs-small">"Buatkan aplikasi kasir" adalah satu kalimat yang berisi puluhan keputusan. Dipecah sampai tiap bagian bisa dikerjakan dan <strong>diuji sendiri</strong>.</p>
+
+<div class="abs-callout-ok abs-callout mt-4">
+
+Langkah yang baik: <strong>kecil, berurutan, dan hasilnya bisa dilihat</strong>.
+
+</div>
+
+</div>
+
+<div>
+
+<h3>Pecahan untuk kasir warung</h3>
+
+<div class="abs-flow mt-2" style="flex-direction:column;gap:0.35rem">
+<div class="abs-flow-item" style="text-align:left;padding:0.45rem">1. Tampilkan daftar produk</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.45rem">2. Masukkan produk ke keranjang</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.45rem">3. Hitung total dan tampilkan struk</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.45rem">4. Simpan transaksi</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.45rem">5. Tampilkan rekap harian</div>
+</div>
+
+<p class="abs-small abs-muted mt-3">Perhatikan: pecahan ini hampir sama dengan urutan kerja AI nanti.</p>
+
+</div>
+
+</div>
+
+<!--
+Catatan: 2 menit. Ini penutup bagian Fundamental sekaligus pintu masuk ke
+Framework Sprint.
+
+Poin yang harus diucapkan: "Perhatikan lima pecahan tadi. Nanti di Bagian 4,
+kamu akan melihat kerangka sprint yang bentuknya mirip — karena memang
+logikanya sama: kerjakan sedikit, uji, baru lanjut."
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Kenapa enam ini lebih dulu
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+<h3>Tool berganti, cara berpikir tidak</h3>
+
+<p class="abs-small abs-muted">Nama produk AI berubah hampir tiap tahun. Yang tidak berubah: kemampuan memutuskan apa yang layak dibangun.</p>
+
+<div class="abs-card abs-card-accent mt-3">
+
+<p>Enam fundamental tadi adalah <strong>bahan mentah</strong> untuk seluruh bagian berikutnya.</p>
+
+</div>
+
+</div>
+
+<div>
+
+<h3>Kaitannya dengan sisa sesi</h3>
+
+<table>
+<tbody>
+<tr><td><strong>Mindset</strong></td><td>peran barumu sebagai pengarah AI</td></tr>
+<tr><td><strong>Framework</strong></td><td>enam fundamental dipakai berurutan</td></tr>
+<tr><td><strong>Live Demo</strong></td><td>contoh nyata dengan kasus warung</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div class="abs-callout mt-6">
+
+<strong>Kalau kamu hanya ingat satu hal dari bagian ini:</strong> AI mempercepat pekerjaan, tapi tidak memperbaiki cara berpikir. Itu tetap tugasmu.
+
+</div>
+
+<!--
+Catatan: 1 menit. Ringkas, jangan menambah materi baru.
+
+Kalimat penutup bagian: "Sekarang kita punya fondasinya. Berikutnya: apa
+yang berubah dari peranmu sebagai pembuat."
+-->
+
+---
+layout: section
+class: abs-dark
+---
+
+<div class="abs-eyebrow">Bagian 2 dari 6</div>
 
 # Mindset
 
 Semua orang kini bisa membangun. Yang membedakan adalah cara berpikir.
 
 <!--
-Pembatas bagian. 10 menit untuk bagian ini.
+Pembatas bagian. 9 menit untuk bagian ini.
 -->
 
 ---
@@ -187,7 +630,7 @@ Kamu harus menguasai <strong>kejelasan maksud</strong>: mendefinisikan masalah, 
 </div>
 
 <!--
-Catatan: 3 menit. Ini slide inti dari Bagian 1.
+Catatan: 2 menit. Ini slide inti dari Bagian 2.
 
 Tekankan: hambatan utama bukan lagi "bisa coding atau tidak", tapi
 "cukup jelas atau tidak ide kamu". Banyak orang gagal bukan karena AI-nya lemah,
@@ -242,7 +685,7 @@ Peran <strong>Quality Checker</strong> paling sering dilewatkan pemula — dan p
 </div>
 
 <!--
-Catatan: 3 menit. Tanya peserta: "Dari tiga peran ini, mana yang paling kamu
+Catatan: 2 menit. Tanya peserta: "Dari tiga peran ini, mana yang paling kamu
 andalkan sekarang?" Biasanya kebanyakan menjawab Orchestrator.
 
 Pesan kunci: peran penilaian tidak bisa didelegasikan ke AI. Kalau kamu tidak
@@ -366,14 +809,14 @@ layout: section
 class: abs-dark
 ---
 
-<div class="abs-eyebrow">Bagian 2 dari 5</div>
+<div class="abs-eyebrow">Bagian 3 dari 6</div>
 
 # Anatomi AI Builder
 
 Sebelum menyetir, kenali dulu kendaraannya.
 
 <!--
-Pembatas bagian. 12 menit untuk bagian ini.
+Pembatas bagian. 11 menit untuk bagian ini.
 -->
 
 ---
@@ -423,7 +866,7 @@ Kita mulai dari <strong>kategori 1</strong> karena paling cepat memberi hasil da
 </div>
 
 <!--
-Catatan: 3 menit. Jangan terjebak membandingkan merek. Pesan yang ingin
+Catatan: 2 menit. Jangan terjebak membandingkan merek. Pesan yang ingin
 ditanamkan: pilih tool sesuai tahap, bukan sesuai yang paling ramai dibicarakan.
 
 Sebut bahwa ketiganya berbagi keterampilan yang sama — menulis instruksi yang
@@ -477,7 +920,7 @@ Konsekuensinya: hasil AI <strong>dipengaruhi kuat oleh apa yang kamu berikan</st
 </div>
 
 <!--
-Catatan: 3 menit. Hindari istilah teknis seperti "transformer" atau "token".
+Catatan: 2 menit. Hindari istilah teknis seperti "transformer" atau "token".
 Yang penting peserta paham: AI bukan mesin pencari fakta, tapi mesin
 penerus pola. Ini menjelaskan kenapa ia bisa salah dengan sangat meyakinkan.
 
@@ -528,7 +971,7 @@ layout: default
 </div>
 
 <!--
-Catatan: 3 menit. Slide ini adalah peta untuk seluruh sesi praktek nanti.
+Catatan: 2 menit. Slide ini adalah peta untuk seluruh sesi praktek nanti.
 Minta peserta mengingat empat kata: Instruksi, Knowledge, Contoh, Tools.
 
 Tekankan urutan prioritas perbaikan — pemula biasanya langsung menambah
@@ -646,14 +1089,14 @@ layout: section
 class: abs-dark
 ---
 
-<div class="abs-eyebrow">Bagian 3 dari 5</div>
+<div class="abs-eyebrow">Bagian 4 dari 6</div>
 
 # Framework Sprint
 
 Lima langkah yang sama, dari ide apa pun.
 
 <!--
-Pembatas bagian. 15 menit. Ini bagian terpenting untuk sesi praktek —
+Pembatas bagian. 16 menit. Ini bagian terpenting untuk sesi praktek —
 ajak peserta memperhatikan dengan serius.
 -->
 
@@ -756,7 +1199,7 @@ Uji cepat: kalau kamu tidak bisa menjelaskan idemu dalam <strong>satu kalimat ta
 </div>
 
 <!--
-Catatan: 3 menit. Latihan singkat: minta peserta menulis satu kalimat ide di
+Catatan: 2 menit. Latihan singkat: minta peserta menulis satu kalimat ide di
 catatan masing-masing. Beri 45 detik. Lalu minta 2 orang membacakannya dan
 bantu persempit bersama-sama.
 
@@ -820,7 +1263,7 @@ Tulis enam hal ini. Tidak perlu lebih.
 </div>
 
 <!--
-Catatan: 4 menit. Slide ini yang paling sering diskip peserta, padahal paling
+Catatan: 3 menit. Slide ini yang paling sering diskip peserta, padahal paling
 menentukan. Tekankan: enam baris ini nanti langsung menjadi bahan untuk
 menulis instruksi di langkah 3.
 
@@ -911,7 +1354,7 @@ AI akan menjawab dengan benar, tapi <strong>gaya, panjang, dan sumbernya tidak b
 </div>
 
 <!--
-Catatan: 4 menit. Ini slide paling praktis di Bagian 3.
+Catatan: 3 menit. Ini slide paling praktis di Bagian 4.
 
 Bacakan instruksi "sesudah" dengan lantang, lalu tunjuk setiap komponennya.
 Tegaskan: bagian "jika jawaban tidak ada di modul, katakan tidak ada" adalah
@@ -1059,14 +1502,14 @@ layout: section
 class: abs-dark
 ---
 
-<div class="abs-eyebrow">Bagian 4 dari 5</div>
+<div class="abs-eyebrow">Bagian 5 dari 6</div>
 
 # Live Demo
 
 Sekarang saya bangun satu aplikasi dari nol di depan kalian.
 
 <!--
-Pembatas bagian. 20 menit. Sebelum mulai, pastikan:
+Pembatas bagian. 21 menit. Sebelum mulai, pastikan:
 
 - Tab browser sudah siap dengan akun yang sudah login
 - Koneksi internet stabil (siapkan hotspot cadangan)
@@ -1566,7 +2009,7 @@ class: abs-dense
 </div>
 
 <!--
-Catatan: 2 menit. Ini slide jembatan. Pesannya: yang berubah hanya wadahnya,
+Catatan: 1 menit. Ini slide jembatan. Pesannya: yang berubah hanya wadahnya,
 bukan cara berpikirnya.
 
 Kalau ada peserta bertanya kenapa demo memakai app builder tapi prakteknya
@@ -1583,14 +2026,14 @@ layout: section
 class: abs-dark
 ---
 
-<div class="abs-eyebrow">Bagian 5 dari 5</div>
+<div class="abs-eyebrow">Bagian 6 dari 6</div>
 
 # Persiapan Praktek
 
 Sekarang bagianmu.
 
 <!--
-Pembatas bagian. 13 menit. Di sini nada bicara berubah dari "mengajar"
+Pembatas bagian. 11 menit. Di sini nada bicara berubah dari "mengajar"
 menjadi "mempersiapkan" — peserta harus merasa siap, bukan gugup.
 -->
 
@@ -1649,7 +2092,7 @@ layout: default
 </div>
 
 <!--
-Catatan: 3 menit. Tunjukkan bahwa langkah pertama sengaja dibuat kecil.
+Catatan: 2 menit. Tunjukkan bahwa langkah pertama sengaja dibuat kecil.
 Target hari ini hanya kotak pertama — dan itu sudah cukup.
 
 Kalau ada yang bertanya "berapa lama sampai bisa bikin produk?" —
@@ -1695,7 +2138,7 @@ layout: default
 </div>
 
 <!--
-Catatan: 3 menit. Nada bicara: serius tapi tidak menakut-nakuti.
+Catatan: 2 menit. Nada bicara: serius tapi tidak menakut-nakuti.
 
 Contoh konkret untuk audiens mahasiswa: menyerahkan tugas yang ditulis AI
 tanpa dibaca itu masalah akademik; memakai AI untuk memahami konsep lalu
@@ -1746,7 +2189,7 @@ layout: default
 </div>
 
 <!--
-Catatan: 3 menit. Bacakan poin "Siapkan sebelum sesi" satu per satu — ini yang
+Catatan: 2 menit. Bacakan poin "Siapkan sebelum sesi" satu per satu — ini yang
 paling sering menyebabkan peserta tertinggal di sesi praktek.
 
 Ingatkan soal dokumen sumber: format hasil pindai (scan) sering tidak terbaca
@@ -1804,7 +2247,7 @@ Lima pola pertama menyelesaikan sebagian besar masalah. Kalau hasilnya kurang te
 </div>
 
 <!--
-Catatan: 3 menit. Minta peserta benar-benar memfoto slide ini. Beri waktu
+Catatan: 2 menit. Minta peserta benar-benar memfoto slide ini. Beri waktu
 10 detik untuk memfoto, jangan bicara saat mereka memfoto.
 
 Setelah selesai memfoto, baca cepat tiga pola yang paling sering dipakai:

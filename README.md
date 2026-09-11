@@ -44,12 +44,34 @@ membacanya.
 
 | Slide | Bagian | Durasi |
 |---|---|---|
-| 1–3 | Pembuka: hook + peta sesi | 5 menit |
-| 4–8 | Mindset: kenapa sekarang, peran baru, skill stack | 10 menit |
-| 9–14 | Anatomi AI Builder: peta tool, cara kerja, batas aman | 12 menit |
-| 15–22 | Framework Sprint 5 langkah | 15 menit |
-| 23–28 | Live demo (4 tahap + rekap) | 20 menit |
-| 29–35 | Penutup: roadmap, etika, checklist, cheat sheet | 13 menit |
+| 1–3 | Pembuka: hook + peta sesi | 6 menit |
+| 4–11 | Fundamental: enam cara berpikir dasar | 13 menit |
+| 12–16 | Mindset: kenapa sekarang, peran baru, skill stack | 9 menit |
+| 17–22 | Anatomi AI Builder: peta tool, cara kerja, batas aman | 11 menit |
+| 23–29 | Framework Sprint 5 langkah | 16 menit |
+| 30–36 | Live demo (4 tahap + rekap) | 21 menit |
+| 37–43 | Penutup: roadmap, etika, checklist, cheat sheet | 11 menit |
+
+Total 87 menit, menyisakan 3 menit untuk jeda dan tanya jawab.
+
+### Bagian Fundamental (4–11)
+
+Enam cara berpikir yang menjadi fondasi sebelum menyentuh tool apa pun.
+Semua contohnya memakai kasus warung/POS yang sama dengan demo, supaya
+peserta melihat benang merahnya.
+
+| Slide | Topik |
+|---|---|
+| 5 | Definisi Masalah — gejala vs akar masalah |
+| 6 | Pemodelan Data — tentukan data sebelum tampilan |
+| 7 | Berpikir Sistem — dampak perubahan antar komponen |
+| 8 | Penerjemahan Niat Pengguna — kata sifat jadi angka |
+| 9 | Penalaran Trade-off — konsekuensi tiap pilihan |
+| 10 | Dekomposisi Masalah — pecah jadi langkah kecil |
+| 11 | Penutup bagian: kenapa ini lebih dulu |
+
+Kalau waktu mepet, percepat bagian ini: bahas Definisi Masalah dan
+Dekomposisi, lalu sebut empat lainnya sekilas.
 
 ## Struktur berkas
 
