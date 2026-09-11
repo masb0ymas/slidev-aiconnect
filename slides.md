@@ -584,7 +584,7 @@ class: abs-dark
 Semua orang kini bisa membangun. Yang membedakan adalah cara berpikir.
 
 <!--
-Pembatas bagian. 9 menit untuk bagian ini.
+Pembatas bagian. 10 menit untuk bagian ini.
 -->
 
 ---
@@ -805,6 +805,27 @@ jawab: tetap berguna, tapi bukan lagi prasyarat untuk membuat sesuatu.
 -->
 
 ---
+layout: image
+image: /mindset-visual.jpg
+backgroundSize: contain
+---
+
+<!--
+Catatan: 1 menit. Slide visual — jeda singkat setelah bagian Mindset.
+
+Tampilkan sambil menghubungkan kembali ke pesan sebelumnya: cara berpikir
+yang berubah, dan peran baru sebagai pengarah AI.
+
+Beri waktu peserta mengamati gambar sebelum lanjut. Jangan buru-buru
+membacakan; cukup satu-dua kalimat penghubung lalu masuk ke bagian
+Anatomi AI Builder.
+
+Catatan untuk penyusun: gambar ini diletakkan di public/mindset-visual.jpg.
+Keterangan yang ditampilkan di slide belum ditambahkan — isi sesuai
+kebutuhan presentasi.
+-->
+
+---
 layout: section
 class: abs-dark
 ---
@@ -837,17 +858,7 @@ layout: default
 <p class="mt-3 abs-small abs-muted">Untuk: membuat asisten, menyusun ide, mengolah teks. <strong>Ini fokus praktek kita.</strong></p>
 </Card>
 
-<Card icon="i-carbon-terminal" title="2. AI Coding Agent">
-<p>Menjalankan perintah di komputermu: membuat berkas, menjalankan program, memperbaiki error.</p>
-<div class="mt-3">
-<span class="abs-pill">ZCode</span>
-<span class="abs-pill">Gemini CLI</span>
-<span class="abs-pill">Antigravity</span>
-</div>
-<p class="mt-3 abs-small abs-muted">Untuk: membangun aplikasi utuh. Jalur lanjutan setelah sesi ini.</p>
-</Card>
-
-<Card icon="i-carbon-application" title="3. App Builder">
+<Card icon="i-carbon-application" title="2. App Builder">
 <p>Antarmuka visual yang menghasilkan aplikasi web dari deskripsi dan mockup.</p>
 <div class="mt-3">
 <span class="abs-pill">Lovable</span>
@@ -855,6 +866,16 @@ layout: default
 <span class="abs-pill">v0</span>
 </div>
 <p class="mt-3 abs-small abs-muted">Untuk: membangun aplikasi web yang langsung jalan. <strong>Ini yang saya pakai di demo nanti.</strong></p>
+</Card>
+
+<Card icon="i-carbon-terminal" title="3. AI Coding Agent">
+<p>Menjalankan perintah di komputermu: membuat berkas, menjalankan program, memperbaiki error.</p>
+<div class="mt-3">
+<span class="abs-pill">ZCode</span>
+<span class="abs-pill">Gemini CLI</span>
+<span class="abs-pill">Antigravity</span>
+</div>
+<p class="mt-3 abs-small abs-muted">Untuk: membangun aplikasi utuh. Jalur lanjutan setelah sesi ini.</p>
 </Card>
 
 </div>

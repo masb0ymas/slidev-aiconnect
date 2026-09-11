@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const hideOn = new Set(['cover', 'end', 'none', 'full'])
+const hideOn = new Set(['cover', 'end', 'none', 'full', 'image'])
 const isHidden = computed(() => hideOn.has($nav.currentLayout ?? ''))
 </script>
 

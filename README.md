@@ -46,13 +46,13 @@ membacanya.
 |---|---|---|
 | 1–3 | Pembuka: hook + peta sesi | 6 menit |
 | 4–11 | Fundamental: enam cara berpikir dasar | 13 menit |
-| 12–16 | Mindset: kenapa sekarang, peran baru, skill stack | 9 menit |
-| 17–22 | Anatomi AI Builder: peta tool, cara kerja, batas aman | 11 menit |
-| 23–29 | Framework Sprint 5 langkah | 16 menit |
-| 30–36 | Live demo (4 tahap + rekap) | 21 menit |
-| 37–43 | Penutup: roadmap, etika, checklist, cheat sheet | 11 menit |
+| 12–17 | Mindset: kenapa sekarang, peran baru, skill stack + slide gambar | 10 menit |
+| 18–23 | Anatomi AI Builder: peta tool, cara kerja, batas aman | 11 menit |
+| 24–30 | Framework Sprint 5 langkah | 16 menit |
+| 31–37 | Live demo (4 tahap + rekap) | 21 menit |
+| 38–44 | Penutup: roadmap, etika, checklist, cheat sheet | 11 menit |
 
-Total 87 menit, menyisakan 3 menit untuk jeda dan tanya jawab.
+Total 88 menit, menyisakan 2 menit untuk jeda dan tanya jawab.
 
 ### Bagian Fundamental (4–11)
 
@@ -80,7 +80,21 @@ slides.md            # seluruh isi deck + catatan presenter
 styles/index.css     # design system (palet rose, kartu, callout, tabel)
 components/          # Card.vue, PromptBox.vue, StepFlow.vue
 global-bottom.vue    # footer nomor slide
+public/              # aset gambar (mindset-visual.jpg)
 ```
+
+## Aset gambar
+
+Gambar lokal diletakkan di `public/` dan dirujuk dengan garis miring di depan
+(`/mindset-visual.jpg`) — bukan path relatif. Folder ini otomatis tersalin ke
+`dist/` saat build.
+
+Slide gambar ada di nomor 17, setelah bagian Mindset, memakai `layout: image`
+dengan `backgroundSize: contain` supaya gambar tidak terpotong. Footer nomor
+slide sengaja disembunyikan di sana (lihat `global-bottom.vue`).
+
+Untuk mengganti gambar: timpa `public/mindset-visual.jpg`, atau ubah
+`image:` pada slide 17 di `slides.md`.
 
 ## Palet warna
 
