@@ -411,14 +411,14 @@ layout: default
 <span class="abs-pill">Bolt</span>
 <span class="abs-pill">v0</span>
 </div>
-<p class="mt-3 abs-small abs-muted">Untuk: tampilan cepat. Perlu pemahaman tambahan untuk dipakai serius.</p>
+<p class="mt-3 abs-small abs-muted">Untuk: membangun aplikasi web yang langsung jalan. <strong>Ini yang saya pakai di demo nanti.</strong></p>
 </Card>
 
 </div>
 
 <div class="abs-callout mt-8" v-click>
 
-Kita mulai dari <strong>kategori 1</strong> karena paling cepat memberi hasil dan paling rendah risikonya. Kategori 2 dan 3 akan saya tunjukkan di akhir demo.
+Kita mulai dari <strong>kategori 1</strong> karena paling cepat memberi hasil dan paling rendah risikonya — itu yang akan kamu pakai di sesi praktek. <strong>Kategori 3</strong> akan saya pakai di demo, supaya kamu lihat bahwa lima langkahnya sama untuk kedua jenis hasil.
 
 </div>
 
@@ -1063,7 +1063,7 @@ class: abs-dark
 
 # Live Demo
 
-Sekarang saya bangun satu asisten dari nol di depan kalian.
+Sekarang saya bangun satu aplikasi dari nol di depan kalian.
 
 <!--
 Pembatas bagian. 20 menit. Sebelum mulai, pastikan:
@@ -1072,7 +1072,12 @@ Pembatas bagian. 20 menit. Sebelum mulai, pastikan:
 - Koneksi internet stabil (siapkan hotspot cadangan)
 - Zoom browser 110-125% agar terlihat dari baris belakang
 - Notifikasi desktop dimatikan
-- File modul untuk knowledge sudah ada di desktop, siap diunggah
+- Daftar produk dan harga (spreadsheet) sudah siap di desktop
+- App builder sudah terbuka dan login di tab terpisah
+
+Catatan penting: di demo ini saya memakai kategori 3 (app builder), bukan
+kategori 1. Sampaikan alasannya: supaya peserta melihat bahwa lima langkah
+yang sama berlaku untuk kedua jenis hasil — asisten chat maupun website.
 
 Kalau ada peserta yang tertinggal, minta mereka mencatat dulu dan bertanya
 di akhir — jangan hentikan demo di tengah.
@@ -1089,25 +1094,25 @@ class: abs-dense
 
 <div>
 
-<h3>Asisten Reviewer Proposal Skripsi</h3>
+<h3>Website POS untuk Warung</h3>
 
 <p class="abs-lead" style="font-size:1.05rem">
-Membantu mahasiswa mengecek draft proposal sebelum diserahkan ke dosen pembimbing.
+Membantu pemilik warung mencatat transaksi dan melihat rekap penjualan harian tanpa buku tulis.
 </p>
 
 <div class="abs-card mt-4">
 
 <p><strong>Masalah</strong></p>
-<p class="abs-small">Mahasiswa sering tidak sadar bagian proposalnya lemah sampai dikembalikan dosen.</p>
+<p class="abs-small">Pemilik warung tidak tahu berapa penjualan hari ini karena semua transaksi dicatat di buku.</p>
 
 <p class="mt-3"><strong>Pengguna</strong></p>
-<p class="abs-small">Mahasiswa tingkat akhir yang sedang menyusun proposal.</p>
+<p class="abs-small">Pemilik warung kelontong yang dibantu satu karyawan.</p>
 
 <p class="mt-3"><strong>Masukan</strong></p>
-<p class="abs-small">Teks atau potongan draft proposal.</p>
+<p class="abs-small">Produk yang dipilih kasir beserta jumlahnya.</p>
 
 <p class="mt-3"><strong>Keluaran</strong></p>
-<p class="abs-small">Daftar kelemahan spesifik + saran perbaikan, per bagian.</p>
+<p class="abs-small">Total belanja, struk, dan rekap penjualan harian.</p>
 
 </div>
 
@@ -1124,22 +1129,22 @@ Membantu mahasiswa mengecek draft proposal sebelum diserahkan ke dosen pembimbin
 </div>
 
 <div class="abs-demo-item">
-<span class="abs-demo-tag">B</span> Instruksi versi 1 → kritik diri → versi 2
+<span class="abs-demo-tag">B</span> Deskripsi versi 1 → kritik diri → versi 2
 </div>
 
 <div class="abs-demo-item">
-<span class="abs-demo-tag">C</span> Menambahkan knowledge dan contoh
+<span class="abs-demo-tag">C</span> Menambahkan data produk dan harga
 </div>
 
 <div class="abs-demo-item">
-<span class="abs-demo-tag">D</span> Uji 3 kasus → temukan cacat → perbaiki
+<span class="abs-demo-tag">D</span> Uji 3 skenario → temukan cacat → perbaiki
 </div>
 
 </div>
 
 <div class="abs-callout mt-4">
 
-<strong>Perhatikan yang saya lakukan, bukan hanya hasilnya.</strong> Yang paling berharga di demo ini adalah bagian saya memperbaiki instruksi setelah hasilnya kurang tepat.
+<strong>Perhatikan yang saya lakukan, bukan hanya hasilnya.</strong> Yang paling berharga di demo ini adalah bagian saya memperbaiki deskripsi setelah hasilnya kurang tepat.
 
 </div>
 
@@ -1150,8 +1155,12 @@ Membantu mahasiswa mengecek draft proposal sebelum diserahkan ke dosen pembimbin
 <!--
 Catatan: 2 menit. Bacakan studi kasusnya, lalu langsung masuk ke demo.
 
-Alasan memilih studi kasus ini: dekat dengan keseharian mahasiswa, mudah
-dinilai benar-salahnya, dan kelemahannya bisa didemonstrasikan dengan jelas.
+Alasan memilih studi kasus ini: dekat dengan keseharian (banyak peserta punya
+keluarga yang berjualan), hasilnya langsung terlihat di browser, dan salah
+hitungnya mudah dibuktikan.
+
+Sampaikan bahwa demo ini sengaja memakai kategori tool yang berbeda dari sesi
+praktek. Pesannya: lima langkahnya sama, wadahnya yang berbeda.
 
 Ingatkan peserta bahwa mereka tidak harus memakai ide yang sama — ini hanya
 contoh alur kerjanya.
@@ -1195,17 +1204,17 @@ layout: default
 
 <PromptBox label="Spesifikasi — enam baris">
 
-**Masalah:** Mahasiswa tidak tahu bagian mana dari proposalnya yang lemah sebelum diserahkan.
+**Masalah:** Pemilik warung tidak tahu penjualan hari ini karena semua transaksi dicatat di buku.
 
-**Pengguna:** Mahasiswa tingkat akhir yang sedang menyusun proposal skripsi.
+**Pengguna:** Pemilik warung kelontong yang dibantu satu karyawan.
 
-**Masukan:** Potongan teks draft proposal (1-3 halaman).
+**Masukan:** Produk yang dipilih kasir beserta jumlahnya.
 
-**Keluaran:** Daftar kelemahan + saran perbaikan, dikelompokkan per bagian proposal.
+**Keluaran:** Total belanja, struk, dan rekap penjualan harian.
 
-**Batasan:** Berdasarkan kaidah proposal ilmiah umum. Tidak menilai isi substansi penelitian. Maksimal 5 temuan. Bahasa Indonesia.
+**Batasan:** Hanya 12 produk yang dijual. Harga tidak boleh diubah AI. Tidak perlu fitur stok dan pelanggan. Bahasa Indonesia.
 
-**Kriteria sukses:** 4 dari 5 draft uji mendapat temuan yang menurut saya relevan.
+**Kriteria sukses:** 4 dari 5 transaksi uji menghasilkan total yang benar dan rekap harian yang sesuai.
 
 </PromptBox>
 
@@ -1216,18 +1225,22 @@ layout: default
 <!--
 SKRIP DEMO A (4 menit)
 
-1. Buka catatan kosong (Notes / Notion / teks editor). JANGAN buka ChatGPT dulu.
-2. Ketik di layar: "Mahasiswa tidak tahu bagian mana dari proposalnya yang
-   lemah sebelum diserahkan." Tunjukkan bahwa tidak ada kata "dan".
-3. Tanyakan ke peserta: "Penggunanya siapa?" — ambil satu jawaban, sempitkan.
+1. Buka catatan kosong (Notes / Notion / teks editor). JANGAN buka app builder dulu.
+2. Ketik di layar: "Pemilik warung tidak tahu penjualan hari ini karena semua
+   transaksi dicatat di buku." Tunjukkan bahwa tidak ada kata "dan".
+3. Tanyakan ke peserta: "Penggunanya siapa?" — ambil satu jawaban, sempitkan
+   ke satu jenis warung, bukan "semua UMKM".
 4. Isi enam baris spesifikasi sambil menjelaskan alasan tiap baris.
-5. Berhenti di baris "Batasan". Jelaskan kenapa "tidak menilai substansi
-   penelitian" penting: membatasi tanggung jawab AI agar tidak overclaim.
+   Ini yang nanti ditempel ke app builder sebagai deskripsi awal.
+5. Berhenti di baris "Batasan". Jelaskan kenapa "hanya 12 produk" dan "harga
+   tidak boleh diubah AI" penting: membatasi ruang gerak AI supaya hasilnya
+   tidak melebar ke fitur yang tidak kita minta.
 6. Baris terakhir: kriteria sukses harus terukur. Tunjukkan bahwa
-   "4 dari 5" jauh lebih berguna daripada "hasilnya bagus".
+   "4 dari 5 transaksi" jauh lebih berguna daripada "hasilnya bagus".
 
 Poin yang harus diucapkan: "Ini 6 menit kerja tanpa AI yang menentukan
-kualitas seluruh sisa sesi."
+kualitas seluruh sisa sesi. Perhatikan juga: saya menulis batasannya sebagai
+larangan, bukan harapan — 'tidak perlu fitur stok', bukan 'sebaiknya fokus'."
 -->
 
 ---
@@ -1235,7 +1248,7 @@ layout: default
 class: abs-dense
 ---
 
-# Demo B — Instruksi dan kritik diri
+# Demo B — Deskripsi dan kritik diri
 
 <div class="abs-step-head">
 <span class="abs-pill">Demo · Langkah 3</span>
@@ -1248,16 +1261,16 @@ class: abs-dense
 
 <PromptBox label="Versi 1" tone="bad">
 
-Kamu adalah reviewer proposal skripsi. Periksa proposal berikut dan berikan masukan yang membangun untuk perbaikan.
+Buatkan website POS untuk warung saya. Yang penting bisa mencatat penjualan dan ada laporannya.
 
 </PromptBox>
 
-<p class="abs-small abs-muted mt-2">Hasilnya: masukan terlalu umum, panjang, dan tidak terstruktur. Sulit ditindaklanjuti.</p>
+<p class="abs-small abs-muted mt-2">Hasilnya: aplikasi jadi, tapi penuh fitur yang tidak saya minta — login, stok, pelanggan, grafik. Alurnya juga tidak seperti kasir warung.</p>
 
 <div class="abs-prompt mt-4">
 <div class="abs-prompt-label">Kritik diri — prompt yang saya ketik</div>
 <div class="abs-prompt-body">
-Sebelum menjawab, sebutkan <strong>3 kelemahan dari instruksi di atas</strong>. Lalu tulis ulang instruksinya menjadi lebih baik, dan jelaskan tiap perbaikan dalam satu baris.
+Sebelum membangun, sebutkan <strong>3 kelemahan dari deskripsi di atas</strong>. Lalu tulis ulang deskripsinya menjadi lebih baik, dan jelaskan tiap perbaikan dalam satu baris.
 </div>
 </div>
 
@@ -1267,21 +1280,24 @@ Sebelum menjawab, sebutkan <strong>3 kelemahan dari instruksi di atas</strong>. 
 
 <PromptBox label="Versi 2" tone="good">
 
-**Peran:** Kamu dosen pembimbing yang teliti dan konstruktif.
+**Peran:** Kamu membangun aplikasi kasir untuk warung kelontong.
 
-**Tugas:** Periksa draft proposal yang saya berikan. Temukan kelemahan pada struktur, kejelasan argumen, dan konsistensi penulisan.
+**Tugas:** Satu halaman kasir dengan alur: pilih produk → atur jumlah → lihat total → simpan transaksi. Plus satu halaman rekap harian.
 
 **Batasan:**
-- Maksimal 5 temuan, diurutkan dari yang paling penting.
-- Setiap temuan: kutip bagian yang bermasalah, jelaskan masalahnya dalam 1 kalimat, beri 1 saran perbaikan.
-- Jangan menilai kebenaran substansi penelitian.
-- Jika bagian tertentu sudah baik, tidak perlu dibahas.
+- Hanya 12 produk, daftarnya saya berikan di bawah. Jangan tambah produk lain.
+- Harga diambil dari daftar saya. Jangan menghitung atau mengubah harga sendiri.
+- Tampilan tombol besar, teks jelas — dipakai sambil berdiri di depan pelanggan.
+- Tidak perlu login, stok, pelanggan, atau grafik.
+- Bahasa Indonesia.
 
-**Format:**
-Nomor. [Bagian] Kutipan -> Masalah -> Saran
+**Format data produk:**
+Nama | Harga
+Kopi sachet | 3000
+...
 
-**Contoh:**
-1. [Latar Belakang] "Banyak penelitian telah..." -> Terlalu umum, tidak ada data -> Sebutkan 1 data spesifik beserta sumbernya.
+**Contoh alur:**
+Kasir klik "Kopi sachet" 2x → total Rp6.000 → klik Simpan → struk muncul.
 
 </PromptBox>
 
@@ -1292,20 +1308,24 @@ Nomor. [Bagian] Kutipan -> Masalah -> Saran
 <!--
 SKRIP DEMO B (5 menit)
 
-1. Tunjukkan instruksi versi 1. Kirim, lalu tampilkan hasilnya ke layar.
-   Diam sebentar, biarkan peserta melihat bahwa hasilnya "terlihat oke
-   tapi tidak berguna".
-2. Baca satu temuan dari hasil itu dengan lantang. Tanyakan: "Ini bisa
-   langsung kamu pakai untuk merevisi?" — jawabannya tidak.
+1. Tunjukkan deskripsi versi 1. Kirim, lalu tampilkan hasilnya ke layar.
+   Diam sebentar, biarkan peserta melihat aplikasinya "jadi, tapi bukan
+   yang saya mau".
+2. Tunjuk satu fitur yang tidak diminta (misalnya halaman login). Tanyakan:
+   "Ini saya butuhkan?" — jawabannya tidak. Tegaskan: AI tidak salah,
+   deskripsi saya yang tidak memberi batas.
 3. Baru setelah itu ketik prompt kritik diri. Ini momen terpenting di demo:
-   AI dipakai untuk mengkritik instruksi, bukan hanya menjalankannya.
+   AI dipakai untuk mengkritik deskripsi, bukan hanya menjalankannya.
 4. Bandingkan hasil kritik dengan versi 2 yang sudah saya siapkan. Jelaskan
    bahwa versi 2 biasanya muncul dari 2-3 putaran, bukan sekali jadi.
 5. Kirim versi 2, tampilkan hasilnya berdampingan dengan versi 1.
 
 Poin yang harus diucapkan: "Saya tidak menulis ulang dari nol. Saya
-memperbaiki tiga hal: peran yang lebih spesifik, batasan jumlah temuan,
-dan format keluaran yang bisa ditindaklanjuti."
+memperbaiki tiga hal: peran yang lebih spesifik, daftar produk yang tegas,
+dan batasan fitur yang jelas. Perhatikan juga kata 'tidak perlu' — itu yang
+membuang fitur yang tidak saya minta."
+
+Kalau waktu mepet, lewati langkah 5 dan cukup tunjukkan versi 2 di slide.
 -->
 
 ---
@@ -1313,7 +1333,7 @@ layout: default
 class: abs-dense
 ---
 
-# Demo C — Menambahkan knowledge
+# Demo C — Menambahkan data produk
 
 <div class="abs-step-head">
 <span class="abs-pill">Demo · Langkah 4</span>
@@ -1324,26 +1344,27 @@ class: abs-dense
 
 <div>
 
-<h3>Yang saya unggah</h3>
+<h3>Yang saya berikan ke AI</h3>
 
-<ul class="abs-list mt-3">
-<li>Panduan penulisan proposal dari kampus (PDF, 24 halaman)</li>
-<li>Dua contoh proposal yang pernah mendapat nilai baik</li>
-<li>Daftar kesalahan yang paling sering muncul dari dosen</li>
+<ul class="abs-list mt-2">
+<li>Daftar 12 produk warung beserta harganya</li>
+<li>Aturan struk: apa saja yang harus tercetak</li>
+<li>Tiga contoh transaksi beserta total yang benar</li>
 </ul>
 
-<div class="abs-callout mt-4">
+<div class="abs-callout mt-3">
 
-<strong>Kenapa tiga dokumen ini?</strong> Karena ketiganya menjawab pertanyaan yang sama: "menurut standar kampus ini, proposal yang baik itu seperti apa?"
+<strong>Kenapa tiga hal ini?</strong> Ketiganya menjawab pertanyaan yang sama: "angka dan aturan mana yang boleh dipakai aplikasi ini?"
 
 </div>
 
-<h3 class="mt-5">Satu baris tambahan di instruksi</h3>
+<h3 class="mt-3">Satu baris tambahan di deskripsi</h3>
 
-<PromptBox label="Tambahan pada bagian Batasan">
+<PromptBox label="Tambahan pada bagian batasan">
 
-- Gunakan HANYA panduan penulisan dan contoh proposal yang saya unggah sebagai acuan penilaian.
-- Jika ada aturan kampus yang tidak tercantum di dokumen, katakan tidak tahu, jangan menebak.
+- Gunakan HANYA daftar produk dan harga di atas. Jangan menambah atau mengubah harga.
+- Total dihitung dari harga di daftar, bukan diperkirakan.
+- Produk di luar daftar -> tampilkan "produk tidak ditemukan", jangan mengarang.
 
 </PromptBox>
 
@@ -1356,20 +1377,20 @@ class: abs-dense
 <div class="grid gap-3 mt-3">
 
 <div class="abs-card">
-<h3 class="abs-small flex items-center gap-1" style="color:var(--abs-danger)"><span class="i-carbon-close-outline" />Sebelum ada knowledge</h3>
-<p class="abs-small">Saran bersifat umum: "perkuat latar belakang", "perbaiki metodologi". Tidak menyebut aturan kampus sama sekali.</p>
+<h3 class="abs-small flex items-center gap-1" style="color:var(--abs-danger)"><span class="i-carbon-close-outline" />Sebelum ada data</h3>
+<p class="abs-small">AI mengarang produk dan harga sendiri. Total belanja tidak cocok dengan harga asli warung.</p>
 </div>
 
 <div class="abs-card abs-card-accent">
-<h3 class="abs-small flex items-center gap-1" style="color:var(--abs-ok)"><span class="i-carbon-checkmark" />Sesudah ada knowledge</h3>
-<p class="abs-small">Saran menyebut acuan konkret: format sitasi, urutan bab, dan batas jumlah halaman sesuai panduan kampus.</p>
+<h3 class="abs-small flex items-center gap-1" style="color:var(--abs-ok)"><span class="i-carbon-checkmark" />Sesudah ada data</h3>
+<p class="abs-small">Produk dan harga sesuai daftar. Total belanja bisa dihitung ulang dan cocok.</p>
 </div>
 
 </div>
 
-<div class="abs-callout-warn abs-callout mt-5">
+<div class="abs-callout-warn abs-callout mt-4">
 
-<strong>Ini yang paling sering bikin peserta kecewa:</strong> mereka mengunggah dokumen tapi lupa menambahkan baris "gunakan HANYA dokumen ini". Tanpa baris itu, AI tetap menjawab dari pengetahuannya sendiri.
+<strong>Ini yang paling sering bikin peserta kecewa:</strong> mereka memberi data tapi lupa menambahkan baris "gunakan HANYA data ini". Tanpa itu, AI tetap menebak harga sendiri.
 
 </div>
 
@@ -1380,16 +1401,25 @@ class: abs-dense
 <!--
 SKRIP DEMO C (4 menit)
 
-1. Unggah ketiga dokumen ke kolom Knowledge — lakukan perlahan agar terlihat.
-2. Sebelum menambahkan baris instruksi, kirim satu pertanyaan uji.
-   Tunjukkan bahwa jawabannya masih generik.
-3. Baru tambahkan baris "gunakan HANYA dokumen ini". Kirim pertanyaan yang
-   sama. Tunjukkan perbedaannya di layar — ini momen "aha" yang penting.
-4. Tunjuk satu saran spesifik yang menyebut aturan kampus, dan bandingkan
-   dengan jawaban sebelumnya.
+1. Tempelkan daftar 12 produk beserta harganya ke dalam deskripsi aplikasi.
+   Lakukan perlahan agar terlihat.
+2. Sebelum menambahkan baris batasan, minta AI menambahkan produk yang tidak
+   ada di daftar — misalnya "es teh". Tunjukkan bahwa AI menambahkannya
+   dengan harga karangan.
+3. Baru tambahkan baris "gunakan HANYA daftar produk ini". Minta produk yang
+   sama lagi. Tunjukkan bahwa AI sekarang menolak atau menampilkan
+   "produk tidak ditemukan" — ini momen "aha" yang penting.
+4. Tunjukkan satu total belanja yang bisa dihitung ulang secara manual di
+   depan peserta. Angka yang cocok jauh lebih meyakinkan daripada penjelasan.
 
-Poin yang harus diucapkan: "Dokumen yang diunggah tidak berguna sampai saya
-memberi tahu AI untuk memakainya. Dua hal ini harus berpasangan."
+Poin yang harus diucapkan: "Data yang saya berikan tidak berguna sampai saya
+memberi tahu AI untuk memakainya. Dua hal ini harus berpasangan. Dan
+perhatikan: pada aplikasi kasir, angka yang salah itu lebih berbahaya
+daripada kalimat yang salah."
+
+Kalau ada peserta bertanya soal upload file: di app builder, data biasanya
+ditempel langsung ke deskripsi atau dijadikan file di dalam proyek. Di
+kategori 1 (chat assistant) bentuknya kolom Knowledge — hasilnya sama.
 -->
 
 ---
@@ -1408,21 +1438,21 @@ class: abs-dense
 
 <div>
 
-<h3>Tiga kasus uji saya</h3>
+<h3>Tiga skenario uji saya</h3>
 
 <div class="abs-card mt-2">
-<p><strong>Kasus 1 — Normal</strong></p>
-<p class="abs-small">Draft proposal dengan latar belakang yang terlalu umum. <span class="abs-pill abs-pill-ok"><span class="i-carbon-checkmark" />Lulus</span></p>
+<p><strong>Skenario 1 — Transaksi biasa</strong></p>
+<p class="abs-small">Beli 3 produk, total harus Rp13.500. <span class="abs-pill abs-pill-ok"><span class="i-carbon-checkmark" />Lulus</span></p>
 </div>
 
 <div class="abs-card mt-2">
-<p><strong>Kasus 2 — Di luar cakupan</strong></p>
-<p class="abs-small">Pertanyaan tentang statistik penelitian, bukan tentang penulisan. <span class="abs-pill abs-pill-warn"><span class="i-carbon-warning-alt" />Melenceng</span></p>
+<p><strong>Skenario 2 — Produk di luar daftar</strong></p>
+<p class="abs-small">Kasir mengetik "es teh", padahal tidak ada di daftar 12 produk. <span class="abs-pill abs-pill-warn"><span class="i-carbon-warning-alt" />Harga dikarang</span></p>
 </div>
 
 <div class="abs-card mt-2">
-<p><strong>Kasus 3 — Jebakan</strong></p>
-<p class="abs-small">Draft dengan metodologi yang lemah tapi penulisan rapi. <span class="abs-pill abs-pill-danger"><span class="i-carbon-close-outline" />Gagal mendeteksi</span></p>
+<p><strong>Skenario 3 — Jebakan</strong></p>
+<p class="abs-small">Jumlah produk diubah jadi 0 setelah masuk keranjang. <span class="abs-pill abs-pill-danger"><span class="i-carbon-close-outline" />Total jadi minus</span></p>
 </div>
 
 </div>
@@ -1432,22 +1462,22 @@ class: abs-dense
 <h3>Perbaikan yang saya lakukan</h3>
 
 <div class="abs-prompt mt-2">
-<div class="abs-prompt-label is-good">Perbaikan 1 — batas cakupan</div>
+<div class="abs-prompt-label is-good">Perbaikan 1 — produk di luar daftar</div>
 <div class="abs-prompt-body">
-Jika permintaan <strong>di luar topik penulisan proposal</strong>, tolak dengan sopan: kamu hanya menilai aspek penulisan, bukan metodologi atau statistik.
+Jika produk yang dimasukkan <strong>tidak ada di daftar 12 produk</strong>, tolak dengan pesan "produk tidak ditemukan". <strong>Jangan mengarang harga.</strong>
 </div>
 </div>
 
 <div class="abs-prompt mt-2">
-<div class="abs-prompt-label is-good">Perbaikan 2 — paksa periksa struktur</div>
+<div class="abs-prompt-label is-good">Perbaikan 2 — jumlah minimal satu</div>
 <div class="abs-prompt-body">
-Sebelum memberi temuan, periksa <strong>kelengkapan bagian wajib</strong> proposal satu per satu. Sebutkan bagian mana yang <strong>ada</strong> dan mana yang <strong>tidak ada</strong>.
+Jumlah setiap produk <strong>tidak boleh kurang dari 1</strong>. Jika kasir mengurangi sampai 0, produk itu <strong>dihapus dari keranjang</strong>, bukan dihitung nol.
 </div>
 </div>
 
 <div class="abs-callout-ok abs-callout mt-2">
 
-Hasilnya: kasus 2 ditolak dengan tepat, dan kasus 3 menghasilkan temuan "metodologi tidak dijelaskan".
+Hasilnya: skenario 2 menampilkan "produk tidak ditemukan", dan skenario 3 menghapus produk dari keranjang dengan total yang tetap benar.
 
 </div>
 
@@ -1458,19 +1488,23 @@ Hasilnya: kasus 2 ditolak dengan tepat, dan kasus 3 menghasilkan temuan "metodol
 <!--
 SKRIP DEMO D (5 menit)
 
-1. Tampilkan ketiga kasus uji di layar (sudah disiapkan sebelumnya sebagai
-   dokumen terpisah — jangan mengetik panjang saat demo).
-2. Jalankan kasus 1. Lulus. Jangan berhenti lama.
-3. Jalankan kasus 2. Tunjukkan jawabannya melenceng ke statistik.
-   Tanyakan ke peserta: "Ini salah di mana?" — ambil satu jawaban.
-4. Jalankan kasus 3. Ini yang paling penting: tunjukkan bahwa AI melewatkan
-   metodologi yang lemah. Diam sebentar. Biarkan peserta melihat sendiri
-   kelemahannya.
-5. Ketik dua perbaikan. Jalankan ulang kasus 2 dan 3. Tunjukkan hasilnya.
+1. Tampilkan ketiga skenario di layar (sudah disiapkan sebelumnya sebagai
+   daftar — jangan mengetik panjang saat demo).
+2. Jalankan skenario 1. Hitung totalnya bersama peserta. Lulus.
+   Jangan berhenti lama.
+3. Jalankan skenario 2. Tunjukkan aplikasi mengarang harga "es teh".
+   Tanyakan ke peserta: "Kalau ini terjadi di warung sungguhan, apa
+   akibatnya?" — ambil satu jawaban.
+4. Jalankan skenario 3. Ini yang paling penting: ubah jumlah jadi 0 dan
+   tunjukkan totalnya jadi minus. Diam sebentar. Biarkan peserta melihat
+   sendiri kelemahannya.
+5. Ketik dua perbaikan. Jalankan ulang skenario 2 dan 3. Tunjukkan hasilnya.
 
 Poin yang harus diucapkan: "Saya menemukan dua cacat bukan karena saya
-pintar, tapi karena saya sengaja membuat kasus uji yang mencoba mematahkan
-asisten saya. Ini yang membedakan prototype mainan dan prototype yang layak."
+pintar, tapi karena saya sengaja membuat skenario yang mencoba mematahkan
+aplikasi saya. Ini yang membedakan prototype mainan dan prototype yang
+layak dipakai. Perhatikan juga: saya tidak memperbaiki dua hal sekaligus
+di awal — satu per satu, supaya saya tahu mana yang bekerja."
 -->
 
 ---
@@ -1489,14 +1523,14 @@ class: abs-dense
 <div class="abs-flow" style="flex-direction:column;gap:0.45rem">
 <div class="abs-flow-item" style="text-align:left;padding:0.6rem">1. Ide disempitkan jadi satu kalimat</div>
 <div class="abs-flow-item" style="text-align:left;padding:0.6rem">2. Spesifikasi enam baris tanpa AI</div>
-<div class="abs-flow-item" style="text-align:left;padding:0.6rem">3. Instruksi versi 1, dikritik, jadi versi 2</div>
-<div class="abs-flow-item" style="text-align:left;padding:0.6rem">4. Knowledge + baris "gunakan HANYA dokumen ini"</div>
-<div class="abs-flow-item" style="text-align:left;padding:0.6rem">5. Tiga kasus uji, dua cacat ditemukan, diperbaiki</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.6rem">3. Deskripsi versi 1, dikritik, jadi versi 2</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.6rem">4. Data produk + baris "gunakan HANYA daftar ini"</div>
+<div class="abs-flow-item" style="text-align:left;padding:0.6rem">5. Tiga skenario, dua cacat ditemukan, diperbaiki</div>
 </div>
 
 <div class="abs-callout mt-4">
 
-<strong>Total waktu:</strong> sekitar 20 menit untuk satu asisten yang benar-benar berfungsi.
+<strong>Total waktu:</strong> sekitar 20 menit untuk satu aplikasi yang benar-benar berfungsi.
 
 </div>
 
@@ -1504,13 +1538,13 @@ class: abs-dense
 
 <div>
 
-<h3>Kalau ingin jadi aplikasi utuh</h3>
+<h3>Dua jalur, satu cara berpikir</h3>
 
-<p class="abs-small abs-muted">Asisten yang baru kita buat hidup di dalam layar chat. Kalau ingin bentuknya aplikasi sendiri — halaman web dengan antarmuka dan tombol — di situlah kategori tool kedua masuk.</p>
+<p class="abs-small abs-muted">Demo tadi memakai <strong>app builder</strong> (kategori 3) → website. Sesi praktek memakai <strong>chat assistant</strong> (kategori 1) → asisten. Keduanya lewat lima langkah yang sama.</p>
 
 <div class="abs-card abs-card-accent mt-3">
 
-<p><strong>AI Coding Agent</strong> — ZCode, Gemini CLI, Antigravity</p>
+<p><strong>Kalau ingin naik ke aplikasi yang lebih serius</strong> — ZCode, Gemini CLI, Antigravity</p>
 
 <ul class="abs-small mt-2">
 <li>Kamu menjelaskan aplikasi yang diinginkan dalam bahasa biasa</li>
@@ -1523,7 +1557,7 @@ class: abs-dense
 
 <div class="abs-callout mt-3">
 
-<strong>Ini bukan materi hari ini.</strong> Saya tunjukkan supaya kamu tahu ke mana arah lanjutannya setelah menguasai dasar.
+<strong>Ini bukan materi hari ini</strong> — hanya arah lanjutannya setelah kamu menguasai dasar.
 
 </div>
 
@@ -1534,6 +1568,11 @@ class: abs-dense
 <!--
 Catatan: 2 menit. Ini slide jembatan. Pesannya: yang berubah hanya wadahnya,
 bukan cara berpikirnya.
+
+Kalau ada peserta bertanya kenapa demo memakai app builder tapi prakteknya
+membuat asisten: jawab bahwa keduanya sengaja dipilih untuk menunjukkan
+bahwa lima langkahnya tidak bergantung pada tool. Jangan masuk ke perdebatan
+merek tool.
 
 Kalau ada peserta yang antusias dan bertanya lebih jauh soal AI coding agent,
 jawab singkat lalu arahkan ke sesi lanjutan — jangan menyimpang dari agenda.
