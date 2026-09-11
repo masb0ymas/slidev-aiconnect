@@ -96,20 +96,31 @@ slide sengaja disembunyikan di sana (lihat `global-bottom.vue`).
 Untuk mengganti gambar: timpa `public/mindset-visual.jpg`, atau ubah
 `image:` pada slide 17 di `slides.md`.
 
-## Palet warna
+## Palet & prinsip desain
 
 Monokrom rose, diambil dari
 [Coolors](https://coolors.co/palette/590d22-800f2f-a4133c-c9184a-ff4d6d-ff758f-ff8fa3-ffb3c1-ffccd5-fff0f3).
 
-Nuansa gelap (`#590d22`, `#800f2f`, `#a4133c`) dipakai untuk teks; nuansa terang
-(`#ff4d6d` ke atas) hanya untuk dekorasi seperti gradient dan latar kartu. Warna
-terang tidak lolos ambang kontras WCAG untuk teks kecil.
+Deck ini dirancang dengan nuansa **profesional dan premium**, dengan empat aturan:
+
+1. **Netral sebagai dasar.** Latar putih, teks tinta hangat (`#1c1316`). Warna tidak
+   dipakai sebagai isian bidang — kartu dan panel tetap netral.
+2. **Rose sebagai aksen, bukan latar.** Nuansa pekat (`#590d22`, `#800f2f`, `#a4133c`)
+   untuk teks dan penanda kecil. Nuansa terang (`#ff4d6d` ke atas) hanya untuk
+   sentuhan dekoratif; warna terang tidak lolos ambang kontras WCAG untuk teks kecil.
+3. **Kedalaman dari garis rambut dan bayangan halus.** Kartu memakai border 1px
+   semi-transparan (`rgba(89,13,34,0.10)`) plus bayangan tipis — bukan blok warna tebal.
+4. **Gradient hanya di slide gelap dan sampul.** Elemen kecil (badge, nomor, ikon)
+   memakai warna solid supaya tidak terbaca ramai.
 
 Karena paletnya monokrom, status **lulus / peringatan / gagal** dibedakan lewat
 intensitas isian badge, ketebalan garis, dan ikon — bukan lewat warna saja.
+
+Token desain ada di bagian atas `styles/index.css`. Mengubah satu variabel di
+`:root` akan mengubah seluruh deck.
 
 ## Yang perlu diisi sebelum tampil
 
 - Nama presenter dan afiliasi (slide 1)
 - Nama dan tanggal event (slide 1)
-- Tautan yang ingin dicantumkan (slide 35)
+- Tautan yang ingin dicantumkan (slide 44)

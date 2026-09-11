@@ -951,52 +951,60 @@ kembali ke "briefing ke penulis baru".
 
 ---
 layout: default
+class: abs-dense
 ---
 
 # Anatomi satu asisten AI
 
-<div class="grid grid-cols-4 gap-3 mt-6 abs-card-row">
+<div class="grid grid-cols-3 gap-3 mt-4 abs-card-row">
 
 <Card icon="i-carbon-settings" title="Instruksi">
-<p><strong>Otaknya.</strong> Aturan main: siapa dia, tugasnya apa, apa yang dilarang.</p>
-<p class="mt-2 abs-small abs-muted">Di ChatGPT: kolom Instructions.</p>
+<p><strong>Otaknya.</strong> Siapa dia dan tugas utamanya.</p>
+<p class="mt-2 abs-small abs-muted">ChatGPT: kolom Instructions.</p>
+</Card>
+
+<Card icon="i-carbon-rule" title="Rules">
+<p><strong>Batasnya.</strong> Yang dilarang, dan kapan harus menolak.</p>
+<p class="mt-2 abs-small abs-muted">Ditulis di bagian larangan.</p>
 </Card>
 
 <Card icon="i-carbon-notebook" title="Knowledge">
-<p><strong>Memori.</strong> Dokumen rujukan yang hanya boleh ia pakai untuk menjawab.</p>
-<p class="mt-2 abs-small abs-muted">Di ChatGPT: kolom Knowledge (unggah file).</p>
+<p><strong>Memori.</strong> Dokumen yang boleh ia pakai untuk menjawab.</p>
+<p class="mt-2 abs-small abs-muted">ChatGPT: kolom Knowledge.</p>
 </Card>
 
-<Card icon="i-carbon-list-checked" title="Contoh">
-<p><strong>Kebiasaannya.</strong> Beberapa contoh jawaban ideal supaya gayanya konsisten.</p>
-<p class="mt-2 abs-small abs-muted">Ditaruh di dalam instruksi.</p>
+<Card icon="i-carbon-skill-level" title="Skills">
+<p><strong>Keahliannya.</strong> Cara kerja yang kamu ajarkan langkah demi langkah.</p>
+<p class="mt-2 abs-small abs-muted">Ditulis sebagai prosedur.</p>
+</Card>
+
+<Card icon="i-carbon-document" title="Output">
+<p><strong>Bentuk jawabannya.</strong> Format, panjang, gaya, dan contohnya.</p>
+<p class="mt-2 abs-small abs-muted">Ditulis di bagian format dan contoh.</p>
 </Card>
 
 <Card icon="i-carbon-tools" title="Tools">
-<p><strong>Tangannya.</strong> Kemampuan tambahan seperti mencari web atau menjalankan kode.</p>
-<p class="mt-2 abs-small abs-muted">Aktifkan hanya bila perlu.</p>
+<p><strong>Tangannya.</strong> Cari web, jalankan kode.</p>
+<p class="mt-2 abs-small abs-muted">Aktifkan bila perlu.</p>
 </Card>
 
 </div>
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-
-<div class="abs-callout">
-<strong>Empat komponen ini menjelaskan 90% masalah.</strong> Kalau asistenmu menjawab ngawur, hampir selalu penyebabnya ada di salah satu dari empat kotak di atas — bukan pada AI-nya.
-</div>
-
-<div class="abs-callout-ok abs-callout">
-<strong>Urutan prioritas saat memperbaiki:</strong> Instruksi dulu, lalu Contoh, lalu Knowledge, terakhir Tools. Perbaiki satu per satu, jangan sekaligus.
-</div>
-
+<div class="abs-callout mt-4">
+<strong>Enam komponen ini menjelaskan 90% masalah.</strong> Jawaban ngawur hampir selalu berasal dari salah satu kotak di atas — bukan dari AI-nya. <strong>Urutan perbaikan:</strong> Instruksi → Rules → Output → Knowledge → Skills → Tools.
 </div>
 
 <!--
 Catatan: 2 menit. Slide ini adalah peta untuk seluruh sesi praktek nanti.
-Minta peserta mengingat empat kata: Instruksi, Knowledge, Contoh, Tools.
+Minta peserta mengingat enam komponen: Instruksi, Rules, Knowledge, Skills,
+Output, Tools.
 
 Tekankan urutan prioritas perbaikan — pemula biasanya langsung menambah
 dokumen padahal masalahnya ada di instruksi yang ambigu.
+
+Bedakan tegas dua hal yang sering tertukar:
+- Skills = cara kerja yang kamu ajarkan, ditulis di dalam instruksi.
+- Tools = kemampuan teknis dari platform, tinggal diaktifkan.
 -->
 
 ---
@@ -1010,32 +1018,56 @@ class: abs-dense
 
 <table>
 <thead>
-<tr><th style="width:26%">Gejala</th><th style="width:30%">Penyebabnya</th><th>Yang kamu lakukan</th></tr>
+<tr><th style="width:23%">Gejala</th><th style="width:41%">Penyebab (menurut riset)</th><th>Yang kamu lakukan</th></tr>
 </thead>
 <tbody>
 <tr v-click>
 <td><strong>Halusinasi</strong><br><span class="abs-small abs-muted">Mengarang fakta, kutipan, atau angka</span></td>
-<td>AI mengejar kelancaran kalimat, bukan kebenaran</td>
+<td>Model dilatih menghasilkan kalimat yang <strong>lancar</strong>, bukan yang benar — ia mewarisi salah paham yang lazim di teks manusia<br><span class="abs-small abs-muted">(Ji dkk., 2023; Lin dkk., 2022)</span></td>
 <td>Minta sumber, lalu <strong>verifikasi sendiri</strong> untuk hal penting</td>
 </tr>
 <tr v-click>
 <td><strong>Informasi usang</strong><br><span class="abs-small abs-muted">Data terasa ketinggalan zaman</span></td>
-<td>Pengetahuannya berhenti di satu titik waktu</td>
+<td>Pengetahuan berhenti di batas waktu data latih, lalu informasi usang <strong>tercampur</strong> dengan pengetahuan umum tanpa ditandai<br><span class="abs-small abs-muted">(Pęzik dkk., 2025)</span></td>
 <td>Berikan dokumen terbaru lewat Knowledge</td>
 </tr>
 <tr v-click>
 <td><strong>Jawaban melenceng</strong><br><span class="abs-small abs-muted">Tidak sesuai yang kamu bayangkan</span></td>
-<td>Instruksimu ambigu atau kurang batasan</td>
+<td>Instruksi kurang spesifik: akurasi turun rata-rata <strong>22,6%</strong>, dan <strong>2x lebih rawan berubah</strong> saat model atau prompt diganti<br><span class="abs-small abs-muted">(Yang dkk., 2026)</span></td>
 <td>Perbaiki instruksi: tambah peran, tujuan, format</td>
 </tr>
+</tbody>
+</table>
+
+</div>
+
+<!--
+Catatan: 2 menit. Tunjukkan tiga gejala pertama; dua sisanya ada di slide
+berikutnya. Jangan dibacakan satu per satu — cukup tunjuk polanya.
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Kenapa AI sering "ngawur" (lanjutan)
+
+<div class="mt-3">
+
+<table>
+<thead>
+<tr><th style="width:23%">Gejala</th><th style="width:41%">Penyebab (menurut riset)</th><th>Yang kamu lakukan</th></tr>
+</thead>
+<tbody>
 <tr v-click>
 <td><strong>Terlalu panjang</strong><br><span class="abs-small abs-muted">Bertele-tele, intinya tenggelam</span></td>
-<td>Tidak ada batasan panjang dan format</td>
+<td>Model reward mengambil jalan pintas: menganggap jawaban lebih panjang berarti lebih disukai, padahal panjang <strong>bukan</strong> tanda lebih informatif<br><span class="abs-small abs-muted">(Shen dkk., 2023)</span></td>
 <td>Sebutkan format: "maksimal 5 poin" atau "3 paragraf"</td>
 </tr>
 <tr v-click>
 <td><strong>Sok yakin</strong><br><span class="abs-small abs-muted">Salah tapi disampaikan dengan lancar</span></td>
-<td>Gaya bahasa AI tidak mencerminkan keyakinan</td>
+<td>Pelatihan RLHF mendorong model menyatakan <strong>keyakinan berlebihan</strong>, dan model cenderung menyetujui keyakinan pengguna alih-alih membantahnya<br><span class="abs-small abs-muted">(Leng dkk., 2024; Sharma dkk., 2024)</span></td>
 <td>Tambahkan: "sebutkan bagian yang kamu tidak yakin"</td>
 </tr>
 </tbody>
@@ -1043,18 +1075,99 @@ class: abs-dense
 
 </div>
 
-<div class="abs-callout mt-6" v-click>
+<div class="abs-callout mt-5" v-click>
 
 Pola umumnya sama: <strong>gejalanya terlihat di jawaban, tapi penyebabnya hampir selalu di instruksi.</strong>
 
 </div>
 
 <!--
-Catatan: 3 menit. Minta peserta mengingat baris ketiga dan terakhir — dua itu
-yang paling sering terjadi di praktek nanti.
+Catatan: 1 menit. Baris "sok yakin" adalah alasan kenapa peran Quality Checker
+tidak bisa didelegasikan. Ulangi poin itu.
 
-Baris "sok yakin" adalah alasan kenapa peran Quality Checker tidak bisa
-didelegasikan. Ulangi poin itu.
+Kalau ada pertanyaan "sumbernya dari mana?", slide-slide berikutnya berisi
+rujukan ilmiahnya. Tidak perlu dibacakan.
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Rujukan ilmiah (1/3)
+
+<p class="abs-small abs-muted">Sumber di balik kolom "penyebab" pada dua slide tabel sebelumnya.</p>
+
+<div class="mt-3 abs-small">
+
+**Halusinasi**
+
+- **Ji dkk. (2023)**<br><span class="abs-muted">Halusinasi melekat pada cara model generatif dilatih, bukan bug sesaat — riset ini memetakan cara mengukurnya dan menekannya.</span>
+- **Lin dkk. (2022)**<br><span class="abs-muted">Model terbaik hanya jujur pada 58% pertanyaan (manusia 94%); model meniru kesalahpahaman populer, dan yang lebih besar justru cenderung kurang jujur — menambah skala saja tidak cukup.</span>
+
+</div>
+
+<!--
+Slide pendukung, bukan slide lisan. Pakai hanya kalau ada pertanyaan soal
+kredibilitas isi tabel. Cukup tunjukkan 10 detik, lalu lanjut.
+
+Kalau ditanya: Ji dkk. adalah survei rujukan standar untuk halusinasi; Lin dkk.
+membuktikan model meniru kesalahpahaman manusia.
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Rujukan ilmiah (2/3)
+
+<p class="abs-small abs-muted">Lanjutan sumber di balik kolom "penyebab".</p>
+
+<div class="mt-3 abs-small">
+
+**Informasi usang**
+
+- **Pęzik dkk. (2025)**<br><span class="abs-muted">Ada batas waktu pengetahuan yang tegas; bila batas ini tidak disadari, model mencampur informasi usang dengan pengetahuan umum sehingga akurasi jawaban turun.</span>
+
+**Jawaban melenceng**
+
+- **Yang dkk. (2026)**<br><span class="abs-muted">Model sering menebak kebutuhan yang tidak disebut (41,1%), tetapi tebakan itu rapuh — prompt kurang spesifik 2x lebih rawan berubah saat model atau prompt diganti, kadang akurasi turun lebih dari 20%.</span>
+
+**Terlalu panjang**
+
+- **Shen dkk. (2023)**<br><span class="abs-muted">Reward model mengambil jalan pintas dengan menganggap manusia menyukai jawaban panjang, padahal panjang tidak sama dengan lebih informatif; memisahkan bias ini membuat performa naik terlepas dari panjang jawaban.</span>
+
+</div>
+
+<!--
+Lanjutan rujukan. Pendukung, bukan bahan lisan — tunjukkan sekilas saja.
+Pęzik dkk. mengukur batas waktu pengetahuan; Yang dkk. menghitung kerapuhan
+instruksi yang kurang spesifik; Shen dkk. membongkar bias panjang jawaban.
+-->
+
+---
+layout: default
+class: abs-dense
+---
+
+# Rujukan ilmiah (3/3)
+
+<p class="abs-small abs-muted">Sisa sumber di balik kolom "penyebab".</p>
+
+<div class="mt-3 abs-small">
+
+**Sok yakin**
+
+- **Leng dkk. (2024)**<br><span class="abs-muted">RLHF mendorong model menyatakan keyakinan berlebihan; reward model untuk PPO bias ke skor percaya diri tinggi tanpa melihat kualitas jawaban, dan kalibrasi ulang menurunkan error itu tanpa mengorbankan performa.</span>
+- **Sharma dkk. (2024)**<br><span class="abs-muted">Sikap menyetujui adalah perilaku umum asisten AI terkini; jawaban yang sejalan dengan pandangan pengguna lebih disukai, dan manusia maupun model penilai kadang memilih jawaban menyenangkan yang salah dibanding yang benar.</span>
+
+</div>
+
+<!--
+Dua sumber terakhir inilah dasar baris "sok yakin" di tabel — RLHF mendorong
+rasa percaya diri berlebihan sekaligus membuat model cenderung menyetujui
+pengguna. Sebut ini hanya kalau ada pertanyaan lanjutan.
 -->
 
 ---
