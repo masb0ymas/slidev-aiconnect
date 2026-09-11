@@ -1,11 +1,79 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# AI Builder Sprint — Dari Ide ke Prototype AI Tanpa Coding
 
-To start the slide show:
+Deck presentasi (Slidev) untuk sesi materi 90 menit sebelum sesi praktek.
+Audiens: mahasiswa / pemula yang ingin belajar membangun asisten AI tanpa menulis kode.
 
-- `npm install`
-- `npm run dev`
-- visit <http://localhost:3030>
+## Menjalankan
 
-Edit the [slides.md](./slides.md) to see the changes.
+```bash
+npm install     # atau: bun install
+npm run dev     # buka http://localhost:3030
+```
 
-Learn more about Slidev at the [documentation](https://sli.dev/).
+## Perintah lain
+
+```bash
+npm run build      # build statis ke dist/ (untuk Netlify/Vercel)
+npm run export     # ekspor PDF — perlu `playwright-chromium`
+```
+
+Untuk ekspor PDF, pasang dulu Playwright:
+
+```bash
+npm i -D playwright-chromium
+```
+
+## Cara presentasi
+
+| Tombol | Fungsi |
+|---|---|
+| `p` | Mode presenter (catatan + timer) |
+| `o` | Tampilan overview semua slide |
+| `d` | Ganti mode gelap/terang |
+| `f` | Layar penuh |
+| `?` | Daftar semua pintasan |
+
+Deck ini dikunci ke **mode terang** (`colorSchema: light`) supaya tampilan tetap
+sama walaupun laptop presenter memakai mode gelap. Jangan hapus setelan itu.
+
+Setiap slide demo (Demo A–D) punya **catatan presenter berupa skrip**: langkah
+yang diklik, prompt yang diketik, dan poin yang harus diucapkan. Tekan `p` untuk
+membacanya.
+
+## Struktur deck (35 slide)
+
+| Slide | Bagian | Durasi |
+|---|---|---|
+| 1–3 | Pembuka: hook + peta sesi | 5 menit |
+| 4–8 | Mindset: kenapa sekarang, peran baru, skill stack | 10 menit |
+| 9–14 | Anatomi AI Builder: peta tool, cara kerja, batas aman | 12 menit |
+| 15–22 | Framework Sprint 5 langkah | 15 menit |
+| 23–28 | Live demo (4 tahap + rekap) | 20 menit |
+| 29–35 | Penutup: roadmap, etika, checklist, cheat sheet | 13 menit |
+
+## Struktur berkas
+
+```
+slides.md            # seluruh isi deck + catatan presenter
+styles/index.css     # design system (palet rose, kartu, callout, tabel)
+components/          # Card.vue, PromptBox.vue, StepFlow.vue
+global-bottom.vue    # footer nomor slide
+```
+
+## Palet warna
+
+Monokrom rose, diambil dari
+[Coolors](https://coolors.co/palette/590d22-800f2f-a4133c-c9184a-ff4d6d-ff758f-ff8fa3-ffb3c1-ffccd5-fff0f3).
+
+Nuansa gelap (`#590d22`, `#800f2f`, `#a4133c`) dipakai untuk teks; nuansa terang
+(`#ff4d6d` ke atas) hanya untuk dekorasi seperti gradient dan latar kartu. Warna
+terang tidak lolos ambang kontras WCAG untuk teks kecil.
+
+Karena paletnya monokrom, status **lulus / peringatan / gagal** dibedakan lewat
+intensitas isian badge, ketebalan garis, dan ikon — bukan lewat warna saja.
+
+## Yang perlu diisi sebelum tampil
+
+- Nama presenter dan afiliasi (slide 1)
+- Nama dan tanggal event (slide 1)
+- Tautan yang ingin dicantumkan (slide 35)

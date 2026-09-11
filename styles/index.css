@@ -1,0 +1,791 @@
+/* ==========================================================================
+   AI Builder Sprint — Design System
+   Palet monokrom rose (Coolors: 590d22 → fff0f3).
+
+   Aturan pemakaian warna:
+   - Nuansa gelap (#590d22, #800f2f, #a4133c) untuk TEKS di atas latar terang.
+   - Nuansa pekat (#c9184a) untuk aksen kuat, isian badge, dan garis.
+   - Nuansa terang (#ff4d6d → #fff0f3) hanya untuk DEKORASI: gradient, latar
+     kartu, garis pemisah. Warna ini tidak lolos ambang kontras WCAG untuk
+     teks kecil, jadi jangan dipakai sebagai warna huruf.
+
+   Semua kelas berprefiks `abs-` agar tidak bentrok dengan utilitas UnoCSS
+   maupun kelas bawaan tema Slidev.
+   ========================================================================== */
+
+:root {
+  /* ---- Skala palet ---- */
+  --abs-rose-900: #590d22;
+  --abs-rose-800: #800f2f;
+  --abs-rose-700: #a4133c;
+  --abs-rose-600: #c9184a;
+  --abs-rose-500: #ff4d6d;
+  --abs-rose-400: #ff758f;
+  --abs-rose-300: #ff8fa3;
+  --abs-rose-200: #ffb3c1;
+  --abs-rose-100: #ffccd5;
+  --abs-rose-50: #fff0f3;
+
+  /* ---- Teks di atas latar terang ---- */
+  --abs-ink: #1b1013;
+  --abs-ink-soft: #4b3b40;
+  --abs-muted: #6d5c61;
+
+  /* ---- Permukaan & garis ---- */
+  --abs-line: rgba(201, 24, 74, 0.16);
+  --abs-surface: rgba(255, 77, 109, 0.05);
+  --abs-surface-strong: rgba(255, 77, 109, 0.10);
+
+  /* ---- Aksen teks (semua lolos WCAG AA di latar terang) ---- */
+  --abs-accent: #a4133c;
+  --abs-accent-deep: #800f2f;
+  --abs-accent-strongest: #590d22;
+
+  /* ---- Semantik ----
+     Palet ini monokrom, jadi warna saja tidak bisa membedakan "baik" dan
+     "buruk". Intensitas dipakai sebagai urutan kepentingan, sedangkan makna
+     sebenarnya dibawa oleh ikon (✓ / ⚠ / ✕) dan label teks di slide. */
+  --abs-ok: #a4133c;
+  --abs-warn: #800f2f;
+  --abs-danger: #590d22;
+
+  /* ---- Gradient ---- */
+  /* Dipakai juga sebagai latar badge berteks putih, jadi ujungnya harus
+     tetap gelap agar teks putih terbaca. */
+  --abs-gradient: linear-gradient(100deg, #590d22 0%, #a4133c 55%, #c9184a 100%);
+  --abs-gradient-soft: linear-gradient(100deg, rgba(255, 77, 109, 0.10) 0%, rgba(201, 24, 74, 0.10) 50%, rgba(128, 15, 47, 0.10) 100%);
+  /* Khusus dekorasi di atas latar gelap. */
+  --abs-gradient-light: linear-gradient(100deg, #ff758f 0%, #ffb3c1 100%);
+}
+
+/* --------------------------------------------------------------------------
+   Tipografi dasar
+   -------------------------------------------------------------------------- */
+
+.slidev-layout {
+  color: var(--abs-ink);
+  /* Latar eksplisit: jangan bergantung pada warna bawaan tema, yang bisa
+     berubah menjadi gelap bila presenter memakai mode gelap sistem. */
+  background: #fff;
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  color: var(--abs-ink);
+  letter-spacing: -0.018em;
+}
+
+.slidev-layout strong {
+  color: var(--abs-ink);
+  font-weight: 600;
+}
+
+.slidev-layout a {
+  color: var(--abs-accent);
+  border-color: rgba(164, 19, 60, 0.4);
+}
+
+.abs-lead {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--abs-ink-soft);
+}
+
+.abs-muted {
+  color: var(--abs-muted);
+}
+
+.abs-small {
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.abs-accent {
+  background: linear-gradient(100deg, #800f2f 0%, #c9184a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.abs-eyebrow {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--abs-accent-deep);
+}
+
+/* --------------------------------------------------------------------------
+   Pill / badge
+   -------------------------------------------------------------------------- */
+
+.abs-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.16rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--abs-surface-strong);
+  color: var(--abs-accent);
+  border: 1px solid var(--abs-line);
+}
+
+/* Badge status. Karena paletnya monokrom, ketiganya dibedakan lewat
+   intensitas isian + ketebalan garis + ikon pendamping, bukan warna. */
+.abs-pill-ok {
+  background: #fff;
+  color: var(--abs-rose-800);
+  border: 1.5px solid var(--abs-rose-800);
+}
+
+.abs-pill-warn {
+  background: var(--abs-rose-100);
+  color: var(--abs-rose-900);
+  border: 1.5px solid var(--abs-rose-700);
+}
+
+.abs-pill-danger {
+  background: var(--abs-rose-600);
+  color: #fff;
+  border: 1.5px solid var(--abs-rose-600);
+}
+
+/* --------------------------------------------------------------------------
+   Kartu
+   -------------------------------------------------------------------------- */
+
+.abs-card {
+  border: 1px solid var(--abs-line);
+  border-radius: 0.85rem;
+  padding: 0.95rem 1.1rem;
+  background: var(--abs-surface);
+}
+
+/* Hanya regangkan kartu bila memang disusun sejajar dalam satu baris grid,
+   supaya tinggi kartu seragam. Di dalam kolom bertumpuk, `height: 100%`
+   membuat tiap kartu mewarisi tinggi tetangganya dan meluber keluar slide. */
+.abs-card-row {
+  align-items: stretch;
+}
+
+.abs-card-row > .abs-card {
+  height: 100%;
+}
+
+.abs-card h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.abs-card p,
+.abs-card ul {
+  margin: 0;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  color: var(--abs-ink-soft);
+}
+
+.abs-card ul {
+  padding-left: 1rem;
+  list-style: disc;
+}
+
+.abs-card li {
+  margin-bottom: 0.2rem;
+}
+
+.abs-card-accent {
+  border-color: rgba(201, 24, 74, 0.34);
+  background: var(--abs-gradient-soft);
+}
+
+/* Kartu bernomor untuk langkah-langkah */
+.abs-card-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--abs-gradient);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Statistik / angka besar
+   -------------------------------------------------------------------------- */
+
+.abs-stat {
+  text-align: center;
+}
+
+.abs-stat-value {
+  display: block;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.05;
+  background: linear-gradient(100deg, #800f2f 0%, #c9184a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.abs-stat-label {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--abs-muted);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Ikon dalam kotak
+   -------------------------------------------------------------------------- */
+
+.abs-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  flex: 0 0 auto;
+  border-radius: 0.6rem;
+  background: var(--abs-surface-strong);
+  color: var(--abs-accent);
+  font-size: 1.15rem;
+}
+
+/* --------------------------------------------------------------------------
+   Callout
+   -------------------------------------------------------------------------- */
+
+.abs-callout {
+  border-left: 3px solid var(--abs-rose-600);
+  border-radius: 0 0.6rem 0.6rem 0;
+  background: rgba(255, 77, 109, 0.06);
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.abs-callout-ok {
+  border-left-color: var(--abs-rose-800);
+  background: rgba(128, 15, 47, 0.05);
+}
+
+.abs-callout-warn {
+  border-left-color: var(--abs-rose-700);
+  background: rgba(164, 19, 60, 0.06);
+}
+
+.abs-callout-danger {
+  border-left-color: var(--abs-rose-500);
+  background: rgba(255, 77, 109, 0.09);
+}
+
+.abs-callout p {
+  margin: 0;
+}
+
+.abs-callout p + p {
+  margin-top: 0.4rem;
+}
+
+/* --------------------------------------------------------------------------
+   Blok prompt / contoh teks AI
+   -------------------------------------------------------------------------- */
+
+.abs-prompt {
+  border: 1px solid var(--abs-line);
+  border-radius: 0.7rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.abs-prompt-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--abs-surface-strong);
+  color: var(--abs-accent);
+  border-bottom: 1px solid var(--abs-line);
+}
+
+/* Contoh yang buruk: nuansa paling pekat.
+   Contoh yang baik: nuansa lebih tenang. Ikon + label teks yang membedakan. */
+.abs-prompt-label.is-bad {
+  background: rgba(255, 77, 109, 0.18);
+  color: var(--abs-accent-strongest);
+  border-bottom-color: rgba(201, 24, 74, 0.28);
+}
+
+.abs-prompt-label.is-good {
+  background: rgba(128, 15, 47, 0.08);
+  color: var(--abs-ok);
+  border-bottom-color: rgba(128, 15, 47, 0.22);
+}
+
+.abs-prompt-body {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.62;
+  color: var(--abs-ink-soft);
+  margin: 0;
+}
+
+/* Isi prompt diproses sebagai markdown, jadi jarak antar baris diatur lewat
+   margin paragraf — bukan `white-space: pre-wrap` yang akan ikut menampilkan
+   whitespace dari indentasi HTML. */
+.abs-prompt-body p {
+  margin: 0 0 0.4rem;
+  line-height: inherit;
+}
+
+.abs-prompt-body > :last-child {
+  margin-bottom: 0;
+}
+
+.abs-prompt-body ul,
+.abs-prompt-body ol {
+  margin: 0 0 0.4rem;
+  padding-left: 1.15rem;
+  line-height: inherit;
+}
+
+.abs-prompt-body ul {
+  list-style: disc;
+}
+
+.abs-prompt-body ol {
+  list-style: decimal;
+}
+
+.abs-prompt-body li {
+  margin-bottom: 0.05rem;
+  line-height: inherit;
+}
+
+.abs-prompt-body strong {
+  color: var(--abs-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Checklist
+   -------------------------------------------------------------------------- */
+
+.abs-check {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.abs-check li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.55;
+  font-size: 0.92rem;
+}
+
+.abs-check li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.28rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 0.25rem;
+  border: 1.5px solid var(--abs-rose-600);
+  background: var(--abs-surface-strong);
+}
+
+.abs-check.is-done li::before {
+  content: '✓';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #fff;
+  border-color: transparent;
+  background: var(--abs-gradient);
+}
+
+.abs-check.is-cross li::before {
+  content: '✕';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #fff;
+  border-color: transparent;
+  background: var(--abs-rose-600);
+}
+
+/* --------------------------------------------------------------------------
+   Daftar bersih tanpa bullet
+   -------------------------------------------------------------------------- */
+
+.abs-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.abs-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.42rem;
+  line-height: 1.55;
+  font-size: 0.92rem;
+}
+
+.abs-list li::before {
+  content: '';
+  position: absolute;
+  left: 0.1rem;
+  top: 0.62rem;
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 999px;
+  background: var(--abs-rose-600);
+}
+
+/* --------------------------------------------------------------------------
+   Slide gelap (pembatas bagian)
+   -------------------------------------------------------------------------- */
+
+.slidev-layout.abs-dark {
+  background: var(--abs-rose-900);
+  background-image:
+    radial-gradient(1100px 520px at 12% -10%, rgba(255, 77, 109, 0.30), transparent 62%),
+    radial-gradient(900px 460px at 92% 108%, rgba(128, 15, 47, 0.62), transparent 60%);
+  color: var(--abs-rose-50);
+}
+
+.slidev-layout.abs-dark h1,
+.slidev-layout.abs-dark h2,
+.slidev-layout.abs-dark h3 {
+  color: #ffffff;
+}
+
+/* Aturan global memberi `strong` warna tinta gelap; di slide gelap itu membuat
+   teks penekanan nyaris tak terlihat, jadi dikembalikan ke putih. */
+.slidev-layout.abs-dark strong,
+.slidev-layout.abs-dark b,
+.slidev-layout.abs-cover strong,
+.slidev-layout.abs-cover b {
+  color: #ffffff;
+}
+
+.slidev-layout.abs-dark a,
+.slidev-layout.abs-cover a {
+  color: var(--abs-rose-200);
+}
+
+.slidev-layout.abs-dark .abs-lead,
+.slidev-layout.abs-dark .abs-muted {
+  color: rgba(255, 240, 243, 0.78);
+}
+
+.slidev-layout.abs-dark .abs-eyebrow {
+  color: var(--abs-rose-200);
+}
+
+.slidev-layout.abs-dark .abs-card {
+  border-color: rgba(255, 179, 193, 0.22);
+  background: rgba(255, 240, 243, 0.06);
+}
+
+.slidev-layout.abs-dark .abs-card p,
+.slidev-layout.abs-dark .abs-card li,
+.slidev-layout.abs-dark .abs-card ul {
+  color: rgba(255, 240, 243, 0.82);
+}
+
+.slidev-layout.abs-dark .abs-icon {
+  background: rgba(255, 240, 243, 0.10);
+  color: var(--abs-rose-200);
+}
+
+.slidev-layout.abs-dark .abs-callout {
+  background: rgba(255, 240, 243, 0.07);
+  border-left-color: var(--abs-rose-300);
+}
+
+/* --------------------------------------------------------------------------
+   Slide sampul
+   -------------------------------------------------------------------------- */
+
+.slidev-layout.abs-cover {
+  background: var(--abs-rose-900);
+  background-image:
+    radial-gradient(1000px 560px at 18% -5%, rgba(255, 77, 109, 0.40), transparent 60%),
+    radial-gradient(820px 520px at 88% 105%, rgba(201, 24, 74, 0.45), transparent 58%),
+    radial-gradient(700px 400px at 70% 20%, rgba(128, 15, 47, 0.58), transparent 62%);
+  color: #fff;
+}
+
+/* Selector diperkuat agar menang atas `.slidev-layout.cover h1 { text-6xl }` dari tema. */
+.slidev-layout.cover.abs-cover h1 {
+  color: #fff;
+  font-size: 3.5rem;
+  line-height: 1.06;
+  font-weight: 700;
+}
+
+.slidev-layout.abs-cover .abs-lead,
+.slidev-layout.abs-cover .abs-muted {
+  color: rgba(255, 240, 243, 0.80);
+}
+
+.slidev-layout.abs-cover .abs-eyebrow {
+  color: var(--abs-rose-200);
+}
+
+.abs-cover-rule {
+  width: 4.5rem;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--abs-gradient-light);
+  margin: 1.2rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   Nomor langkah besar (slide framework)
+   -------------------------------------------------------------------------- */
+
+.abs-step-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.abs-step-head .abs-pill {
+  font-size: 0.72rem;
+}
+
+.abs-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0.4rem;
+}
+
+.abs-flow-item {
+  flex: 1;
+  text-align: center;
+  border: 1px solid var(--abs-line);
+  border-radius: 0.7rem;
+  padding: 0.6rem 0.4rem;
+  background: var(--abs-surface);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--abs-ink-soft);
+}
+
+.abs-flow-item.is-active {
+  border-color: transparent;
+  background: var(--abs-gradient);
+  color: #fff;
+}
+
+/* Aturan global `.slidev-layout strong` memberi warna tinta gelap; di dalam
+   elemen bergradasi gelap itu membuat teks penekanan nyaris tak terbaca. */
+.abs-flow-item.is-active strong,
+.abs-flow-item.is-active b {
+  color: #fff;
+}
+
+/* Daftar tahap demo: satu baris per tahap dengan penanda huruf.
+   Sengaja bukan blok bergradasi — empat blok gelap bertumpuk terlalu berat. */
+.abs-demo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--abs-line);
+  border-left: 3px solid var(--abs-rose-600);
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--abs-surface);
+  font-size: 0.87rem;
+  font-weight: 500;
+  color: var(--abs-ink-soft);
+}
+
+.abs-demo-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: 0 0 auto;
+  border-radius: 0.35rem;
+  background: var(--abs-gradient);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Slide padat — merapatkan tipografi & jarak agar konten muat di kanvas 980×552
+   -------------------------------------------------------------------------- */
+
+.slidev-layout.abs-dense {
+  font-size: 0.94rem;
+}
+
+.slidev-layout.abs-dense h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.55rem;
+}
+
+.slidev-layout.abs-dense h2 {
+  font-size: 1.3rem;
+}
+
+.slidev-layout.abs-dense h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.slidev-layout.abs-dense p {
+  margin: 0.35rem 0;
+  line-height: 1.5;
+}
+
+.slidev-layout.abs-dense .abs-card {
+  padding: 0.6rem 0.8rem;
+}
+
+.slidev-layout.abs-dense .abs-card h3 {
+  font-size: 0.92rem;
+  margin-bottom: 0.25rem;
+}
+
+.slidev-layout.abs-dense .abs-card p,
+.slidev-layout.abs-dense .abs-card ul {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.slidev-layout.abs-dense .abs-list li,
+.slidev-layout.abs-dense .abs-check li {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin-bottom: 0.28rem;
+}
+
+.slidev-layout.abs-dense .abs-callout {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.slidev-layout.abs-dense .abs-prompt-body {
+  padding: 0.5rem 0.7rem;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.slidev-layout.abs-dense table {
+  font-size: 0.78rem;
+}
+
+.slidev-layout.abs-dense td,
+.slidev-layout.abs-dense th {
+  padding: 0.3rem 0.5rem;
+}
+
+.slidev-layout.abs-dense .abs-step-head {
+  margin-bottom: 0.5rem;
+}
+
+.slidev-layout.abs-dense .abs-lead {
+  font-size: 1.02rem;
+}
+
+/* --------------------------------------------------------------------------
+   Tabel
+   -------------------------------------------------------------------------- */
+
+.slidev-layout table {
+  font-size: 0.85rem;
+}
+
+.slidev-layout th {
+  font-weight: 600;
+  color: var(--abs-ink);
+  border-bottom: 1.5px solid var(--abs-line);
+}
+
+.slidev-layout td {
+  vertical-align: top;
+  line-height: 1.5;
+  color: var(--abs-ink-soft);
+}
+
+.slidev-layout tr {
+  border-bottom: 1px solid rgba(201, 24, 74, 0.10);
+}
+
+/* --------------------------------------------------------------------------
+   Blok kode inline & code block
+   -------------------------------------------------------------------------- */
+
+.slidev-layout :not(pre) > code {
+  background: var(--abs-surface-strong);
+  color: var(--abs-accent-deep);
+  padding: 0.1rem 0.34rem;
+  border-radius: 0.32rem;
+  font-size: 0.86em;
+}
+
+.slidev-layout pre {
+  border: 1px solid var(--abs-line);
+}
+
+/* --------------------------------------------------------------------------
+   Footer global
+   -------------------------------------------------------------------------- */
+
+.abs-footer {
+  position: absolute;
+  bottom: 0.55rem;
+  right: 0.9rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--abs-muted);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.slidev-layout.abs-dark .abs-footer,
+.slidev-layout.abs-cover .abs-footer {
+  color: rgba(255, 240, 243, 0.62);
+  opacity: 1;
+}
+
+/* Jangan tampilkan footer di slide sampul */
+.slidev-page[data-slidev-no='1'] .abs-footer {
+  display: none;
+}
